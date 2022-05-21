@@ -2,6 +2,11 @@
   "extends": "./tsconfig.json",
   "include": ["**/*.ts"],
   "compilerOptions": {
-    "types": []
+    "types": ["jest", "node"]
+  },
+  "angularCompilerOptions": {
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
   }
 }
