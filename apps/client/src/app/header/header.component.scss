@@ -1,0 +1,32 @@
+.header__container {
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #373f68;
+  //   max-width: 825px;
+  border-radius: 10px;
+  color: var(--background-color);
+}
+
+.header__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.header__button {
+  margin-left: auto;
+  margin-right: -6rem;
+}
+
+.button__content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  & img {
+    transform: scale(2);
+    margin-top: 0.2rem;
+  }
+}
