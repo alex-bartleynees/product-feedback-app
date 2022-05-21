@@ -1,0 +1,12 @@
+.tile__container {
+  border-radius: 8px;
+  padding: 1rem;
+  max-width: 225px;
+  min-height: 137px;
+  background-color: var(--background-color);
+  margin-block-end: 1.5rem;
+}
+
+.radial-gradient {
+  background-image: url('../../assets/background-header.png');
+}
