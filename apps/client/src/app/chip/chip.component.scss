@@ -1,0 +1,21 @@
+.chip__container {
+  background-color: var(--surface-color);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  min-width: 56px;
+  height: 30px;
+  color: #4661e6;
+}
+
+.chip-text {
+  font-weight: 600;
+  font-size: 0.813rem;
+}
+
+.chip--active {
+  background-color: #4661e6;
+  color: var(--background-color);
+}
