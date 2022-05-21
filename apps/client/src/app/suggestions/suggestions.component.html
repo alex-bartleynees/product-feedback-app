@@ -1,0 +1,49 @@
+<div class="page__container">
+  <div class="sidebar__container">
+    <product-feedback-app-tile [radial]="true">
+      <div class="heading__container">
+        <h2>Frontend Mentor</h2>
+        <p class="body 2">Feedback Board</p>
+      </div>
+    </product-feedback-app-tile>
+
+    <product-feedback-app-tile>
+      <div class="chip__container">
+        <product-feedback-app-chip
+          *ngFor="let chip of chipList"
+          [text]="chip.text"
+          [active]="chip.active"
+        ></product-feedback-app-chip>
+      </div>
+    </product-feedback-app-tile>
+
+    <product-feedback-app-tile>
+      <div class="roadmap__container">
+        <div class="roadmap__heading-container">
+          <h3 class="roadmap__heading">Roadmap</h3>
+          <p class="roadmap__view-text body-3">View</p>
+        </div>
+        <div class="roadmap__content">
+          <div class="roadmap__item">
+            <p>Planned</p>
+            <span class="number">2</span>
+          </div>
+
+          <div class="roadmap__item roadmap__item--in-progress">
+            <p>In-Progress</p>
+            <span class="number">3</span>
+          </div>
+
+          <div class="roadmap__item roadmap__item--live">
+            <p>Live</p>
+            <span class="number">1</span>
+          </div>
+        </div>
+      </div>
+    </product-feedback-app-tile>
+  </div>
+  <main class="content__container">
+    <product-feedback-app-header></product-feedback-app-header>
+    <product-feedback-app-suggestions-list></product-feedback-app-suggestions-list>
+  </main>
+</div>
