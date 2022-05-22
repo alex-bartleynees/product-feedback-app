@@ -6,6 +6,7 @@
     "ng": "nx",
     "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main",
     "start": "nx serve",
+    "server": "json-server --watch db.json",
     "build": "nx build",
     "test": "nx test"
   },
@@ -28,6 +29,7 @@
     "@ngrx/router-store": "~13.0.0",
     "@ngrx/store": "~13.0.0",
     "@nrwl/angular": "14.0.2",
+    "json-server": "^0.17.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "~7.4.0",
     "tslib": "^2.0.0",

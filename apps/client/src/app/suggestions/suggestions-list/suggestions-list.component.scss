@@ -1,0 +1,31 @@
+.suggestion-list__container {
+  background-color: var(--background-color);
+  margin-top: 1.5rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 8rem;
+}
+
+.suggestion-list__heading {
+  color: #3a4374;
+}
+
+.suggestion-list__text {
+  text-align: center;
+  color: #647196;
+}
+
+.button__content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  & img {
+    transform: scale(2);
+    margin-top: 0.2rem;
+  }
+}

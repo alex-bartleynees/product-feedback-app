@@ -1,26 +1,35 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StoreModule } from '@ngrx/store';
+import { RootStoreConfig, StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import * as fromUsers from './users/users.reducer';
-import { UsersEffects } from './users/users.effects';
-import { UsersFacade } from './users/users.facade';
-import * as fromFeedback from './feedback/feedback.reducer';
-import { FeedbackEffects } from './feedback/feedback.effects';
-import { FeedbackFacade } from './feedback/feedback.facade';
+import * as fromSuggestions from './suggestions/suggestions.reducer';
+import { SuggestionsEffects } from './suggestions/suggestions.effects';
+import { SuggestionsFacade } from './suggestions/suggestions.facade';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
+import { reducers } from './index';
+
+const STORE_NAME = 'product-feedback-store';
+const storeConfig: RootStoreConfig<any, any> = {
+  runtimeChecks: {
+    strictStateImmutability: true,
+    strictActionImmutability: true,
+  },
+};
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    StoreModule.forFeature(fromUsers.USERS_FEATURE_KEY, fromUsers.reducer),
-    EffectsModule.forFeature([UsersEffects]),
+    StoreModule.forRoot(reducers, storeConfig),
     StoreModule.forFeature(
-      fromFeedback.FEEDBACK_FEATURE_KEY,
-      fromFeedback.reducer
+      fromSuggestions.SUGGESTIONS_FEATURE_KEY,
+      fromSuggestions.reducer
     ),
-    EffectsModule.forFeature([FeedbackEffects]),
+    EffectsModule.forFeature([SuggestionsEffects]),
+    EffectsModule.forRoot([SuggestionsEffects]),
+    StoreDevtoolsModule.instrument({ maxAge: 25, name: STORE_NAME }),
   ],
-  providers: [UsersFacade, FeedbackFacade],
+  providers: [SuggestionsFacade],
 })
 export class StateModule {}

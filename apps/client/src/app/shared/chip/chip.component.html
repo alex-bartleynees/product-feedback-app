@@ -1,0 +1,7 @@
+<div
+  class="chip__container"
+  (click)="chipClick.emit()"
+  [ngClass]="{ 'chip--active': active }"
+>
+  <p class="chip-text">{{ text }}</p>
+</div>

@@ -5,8 +5,13 @@
     "declaration": true,
     "declarationMap": true,
     "inlineSources": true,
-    "types": []
+    "types": [],
+    "composite": true
   },
   "exclude": ["src/test-setup.ts", "**/*.spec.ts", "**/*.test.ts"],
-  "include": ["**/*.ts"]
+  "include": [
+    "**/*.ts",
+    "../../libs/api-interfaces/src/index.ts",
+    "../../../product-feedback-app/apps/client/src/environments/environment.ts"
+  ]
 }

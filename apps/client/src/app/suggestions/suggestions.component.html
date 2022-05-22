@@ -13,6 +13,7 @@
           *ngFor="let chip of chipList"
           [text]="chip.text"
           [active]="chip.active"
+          (chipClick)="onChipClick(chipList, chip)"
         ></product-feedback-app-chip>
       </div>
     </product-feedback-app-tile>
@@ -26,24 +27,32 @@
         <div class="roadmap__content">
           <div class="roadmap__item">
             <p>Planned</p>
-            <span class="number">2</span>
+            <span class="number">{{
+              (plannedSuggestions$ | async)?.length
+            }}</span>
           </div>
 
           <div class="roadmap__item roadmap__item--in-progress">
             <p>In-Progress</p>
-            <span class="number">3</span>
+            <span class="number">{{
+              (inProgressSuggestions$ | async)?.length
+            }}</span>
           </div>
 
           <div class="roadmap__item roadmap__item--live">
             <p>Live</p>
-            <span class="number">1</span>
+            <span class="number">{{ (liveSuggestions$ | async)?.length }}</span>
           </div>
         </div>
       </div>
     </product-feedback-app-tile>
   </div>
   <main class="content__container">
-    <product-feedback-app-header></product-feedback-app-header>
-    <product-feedback-app-suggestions-list></product-feedback-app-suggestions-list>
+    <product-feedback-app-header
+      [numberOfSuggestions]="(allSuggestions$ | async)?.length"
+    ></product-feedback-app-header>
+    <product-feedback-app-suggestions-list
+      [allSuggestions$]="allSuggestions$"
+    ></product-feedback-app-suggestions-list>
   </main>
 </div>

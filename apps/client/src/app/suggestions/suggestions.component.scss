@@ -1,9 +1,6 @@
 .page__container {
-  max-width: 80rem;
-  padding-top: 5rem;
-  margin: 0 auto;
   display: grid;
-  grid-template-columns: 15rem 1fr;
+  grid-template-columns: 15.5rem 1fr;
   grid-template-areas: 'sidebar content';
 }
 
@@ -44,6 +41,11 @@
 .roadmap__view-text {
   text-decoration: underline;
   color: #4661e6;
+  cursor: pointer;
+}
+
+.roadmap__view-text:hover {
+  color: #8397f8;
 }
 
 .roadmap__content {

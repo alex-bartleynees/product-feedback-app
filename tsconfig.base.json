@@ -15,9 +15,13 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@app-config/config": ["libs/app-config/src/index.ts"],
+      "@env/environments": ["apps/client/src/environments/environment.ts"],
       "@product-feedback-app/api-interfaces": [
         "libs/api-interfaces/src/index.ts"
       ],
+      "@product-feedback-app/app-config": ["libs/app-config/src/index.ts"],
+      "@product-feedback-app/client": ["apps/client/src/index.ts"],
       "@product-feedback-app/core-data": ["libs/core-data/src/index.ts"]
     }
   },

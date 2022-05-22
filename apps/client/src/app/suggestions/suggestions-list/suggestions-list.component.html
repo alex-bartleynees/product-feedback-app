@@ -1,0 +1,23 @@
+<ng-container
+  *ngIf="(allSuggestions$ | async)?.length; else noSuggestions"
+></ng-container>
+<product-feedback-app-suggestion-list-item
+  *ngFor="let suggestion of allSuggestions$ | async | sort: sortBy:ascending"
+  [suggestion]="suggestion"
+></product-feedback-app-suggestion-list-item>
+
+<ng-template #noSuggestions>
+  <div class="suggestion-list__container">
+    <img src="../../assets/illustration-empty.svg" alt="illustration empty" />
+    <h1 class="suggestion-list__heading">There is no feedback yet.</h1>
+    <div class="suggestion-list__text">
+      <p>Got a suggestion? Found a bug that needs to be squashed?</p>
+      <p>We love hearing about new ideas to improve our app.</p>
+    </div>
+    <product-feedback-app-button>
+      <div class="button__content">
+        <img src="../../assets/icon-plus.svg" alt="plus icon" /> Add Feedback
+      </div>
+    </product-feedback-app-button>
+  </div>
+</ng-template>

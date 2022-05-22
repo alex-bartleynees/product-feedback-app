@@ -1,0 +1,15 @@
+<div class="header__container">
+  <div class="header__content">
+    <img src="../../assets/icon-suggestions.svg" alt="suggestion icon" />
+    <h2>{{ numberOfSuggestions ?? 0 }} Suggestions</h2>
+    <div class="header__sort">
+      <p class="body-2">Sort by: Most Upvotes</p>
+      <img src="../../assets/icon-arrow-up.svg" alt="up arrow" />
+    </div>
+  </div>
+  <product-feedback-app-button class="header__button">
+    <div class="button__content" (click)="openMenu.emit()">
+      <img src="../../assets/icon-plus.svg" alt="plus icon" /> Add Feedback
+    </div>
+  </product-feedback-app-button>
+</div>
