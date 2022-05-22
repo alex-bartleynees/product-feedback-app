@@ -6,6 +6,7 @@
     let suggestion of allSuggestions$ | async | sort: sortBy.key:sortBy.order
   "
   [suggestion]="suggestion"
+  (upVoteClick)="upVoteClick.emit(suggestion)"
 ></product-feedback-app-suggestion-list-item>
 
 <ng-template #noSuggestions>

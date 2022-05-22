@@ -132,4 +132,8 @@ export class SuggestionsComponent implements OnInit {
     this.menuItemSelected = menuItem;
     this.isMenuOpen = false;
   }
+
+  onUpVoteClick(suggestion: Suggestion): void {
+    this.suggestionsFacade.upVoteSuggestion(suggestion);
+  }
 }

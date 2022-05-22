@@ -17,3 +17,18 @@ export const selectSuggestion = createAction(
   '[Suggestions] Select Suggestion',
   props<{ suggestionId: string }>()
 );
+
+export const updateSuggestion = createAction(
+  '[Suggestions] Update Suggestion',
+  props<{ suggestion: Suggestion }>()
+);
+
+export const updateSuggestionSuccess = createAction(
+  '[Suggestions] Update Suggestion Success',
+  props<{ suggestion: Suggestion }>()
+);
+
+export const updateSuggestionFailure = createAction(
+  '[Suggestions] Update Suggestion Failure',
+  props<{ error: any }>()
+);

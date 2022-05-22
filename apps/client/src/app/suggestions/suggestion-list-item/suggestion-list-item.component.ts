@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Suggestion } from '@product-feedback-app/api-interfaces';
 
 @Component({
@@ -8,4 +8,6 @@ import { Suggestion } from '@product-feedback-app/api-interfaces';
 })
 export class SuggestionListItemComponent {
   @Input() suggestion?: Suggestion;
+
+  @Output() upVoteClick = new EventEmitter<Suggestion>();
 }

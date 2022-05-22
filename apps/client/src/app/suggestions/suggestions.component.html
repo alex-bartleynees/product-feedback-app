@@ -57,6 +57,7 @@
     <product-feedback-app-suggestions-list
       [sortBy]="sortBy"
       [allSuggestions$]="allSuggestions$"
+      (upVoteClick)="onUpVoteClick($event)"
     ></product-feedback-app-suggestions-list>
   </main>
 </div>

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Suggestion } from '@product-feedback-app/api-interfaces';
 import { Observable } from 'rxjs';
 import { SortBy } from '../suggestions.component';
@@ -11,4 +11,6 @@ import { SortBy } from '../suggestions.component';
 export class SuggestionsListComponent {
   @Input() allSuggestions$?: Observable<Suggestion[]>;
   @Input() sortBy: SortBy = { key: 'upvotes', order: 'desc' };
+
+  @Output() upVoteClick = new EventEmitter<Suggestion>();
 }

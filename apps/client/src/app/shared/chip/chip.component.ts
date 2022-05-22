@@ -8,6 +8,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class ChipComponent {
   @Input() text: string | number = '';
   @Input() active = false;
+  @Input() showArrow = false;
 
   @Output() chipClick = new EventEmitter<string | number>();
+  @Output() upVoteClick = new EventEmitter();
 }

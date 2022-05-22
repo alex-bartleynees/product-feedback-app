@@ -47,4 +47,15 @@ export class SuggestionsFacade {
   dispatch(action: Action): void {
     this.store.dispatch(action);
   }
+
+  upVoteSuggestion(suggestion: Suggestion): void {
+    const updatedSuggestion = {
+      ...suggestion,
+      upvotes: suggestion.upvotes + 1,
+    };
+
+    this.dispatch(
+      SuggestionsActions.updateSuggestion({ suggestion: updatedSuggestion })
+    );
+  }
 }

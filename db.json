@@ -9,7 +9,7 @@
       "id": 1,
       "title": "Add tags for solutions",
       "category": "enhancement",
-      "upvotes": 112,
+      "upvotes": 149,
       "status": "suggestion",
       "description": "Easier to search for solutions based on a specific stack.",
       "comments": [
@@ -171,7 +171,7 @@
       "id": 6,
       "title": "Preview images not loading",
       "category": "bug",
-      "upvotes": 3,
+      "upvotes": 12,
       "status": "suggestion",
       "description": "Challenge preview images are missing when you apply a filter.",
       "comments": []
@@ -180,7 +180,7 @@
       "id": 7,
       "title": "More comprehensive reports",
       "category": "feature",
-      "upvotes": 123,
+      "upvotes": 170,
       "status": "planned",
       "description": "It would be great to see a more detailed breakdown of solutions.",
       "comments": [
@@ -265,7 +265,7 @@
       "id": 11,
       "title": "Animated solution screenshots",
       "category": "bug",
-      "upvotes": 9,
+      "upvotes": 11,
       "status": "in-progress",
       "description": "Screenshots of solutions with animations don’t display correctly.",
       "comments": []
