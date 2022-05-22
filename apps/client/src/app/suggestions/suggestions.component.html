@@ -49,10 +49,21 @@
   </div>
   <main class="content__container">
     <product-feedback-app-header
+      class="header"
       [numberOfSuggestions]="(allSuggestions$ | async)?.length"
+      [menuItemSelected]="menuItemSelected"
+      (openMenu)="isMenuOpen = !isMenuOpen"
     ></product-feedback-app-header>
     <product-feedback-app-suggestions-list
+      [sortBy]="sortBy"
       [allSuggestions$]="allSuggestions$"
     ></product-feedback-app-suggestions-list>
   </main>
 </div>
+
+<product-feedback-app-menu
+  *ngIf="isMenuOpen"
+  [menuItems]="menuItems"
+  [itemSelected]="menuItemSelected"
+  (menuItemClicked)="onMenuItemClick($event)"
+></product-feedback-app-menu>

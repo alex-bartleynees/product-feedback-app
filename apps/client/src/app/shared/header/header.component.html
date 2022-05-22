@@ -3,12 +3,23 @@
     <img src="../../assets/icon-suggestions.svg" alt="suggestion icon" />
     <h2>{{ numberOfSuggestions ?? 0 }} Suggestions</h2>
     <div class="header__sort">
-      <p class="body-2">Sort by: Most Upvotes</p>
-      <img src="../../assets/icon-arrow-up.svg" alt="up arrow" />
+      <p class="body-2" (click)="openMenu.emit()">
+        Sort by: {{ menuItemSelected?.title }}
+      </p>
+      <img
+        *ngIf="menuItemSelected?.sortBy?.order === 'desc'"
+        src="../../assets/icon-arrow-up.svg"
+        alt="up arrow"
+      />
+      <img
+        *ngIf="menuItemSelected?.sortBy?.order === 'asc'"
+        src="../../assets/icon-arrow-down.svg"
+        alt="down arrow"
+      />
     </div>
   </div>
   <product-feedback-app-button class="header__button">
-    <div class="button__content" (click)="openMenu.emit()">
+    <div class="button__content">
       <img src="../../assets/icon-plus.svg" alt="plus icon" /> Add Feedback
     </div>
   </product-feedback-app-button>

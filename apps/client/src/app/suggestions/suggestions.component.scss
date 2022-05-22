@@ -4,6 +4,10 @@
   grid-template-areas: 'sidebar content';
 }
 
+.header {
+  position: relative;
+}
+
 .sidebar__container {
   grid-area: sidebar;
 }

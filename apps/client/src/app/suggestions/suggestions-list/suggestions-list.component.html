@@ -2,7 +2,9 @@
   *ngIf="(allSuggestions$ | async)?.length; else noSuggestions"
 ></ng-container>
 <product-feedback-app-suggestion-list-item
-  *ngFor="let suggestion of allSuggestions$ | async | sort: sortBy:ascending"
+  *ngFor="
+    let suggestion of allSuggestions$ | async | sort: sortBy.key:sortBy.order
+  "
   [suggestion]="suggestion"
 ></product-feedback-app-suggestion-list-item>
 

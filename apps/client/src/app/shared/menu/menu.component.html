@@ -1,0 +1,10 @@
+<div class="menu__container">
+  <div
+    class="menu__item"
+    *ngFor="let item of menuItems"
+    (click)="menuItemClicked.emit(item)"
+    [ngClass]="{ 'menu__item--active': itemSelected === item }"
+  >
+    {{ item.title }}
+  </div>
+</div>

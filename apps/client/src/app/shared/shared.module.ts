@@ -4,6 +4,7 @@ import { CoreDataModule } from '@product-feedback-app/core-data';
 import { ButtonComponent } from './button/button.component';
 import { ChipComponent } from './chip/chip.component';
 import { HeaderComponent } from './header/header.component';
+import { MenuComponent } from './menu/menu.component';
 import { SortPipe } from './pipes/sort.pipe';
 import { TileComponent } from './tile/tile.component';
 
@@ -15,6 +16,7 @@ import { TileComponent } from './tile/tile.component';
     HeaderComponent,
     TileComponent,
     SortPipe,
+    MenuComponent,
   ],
   exports: [
     ButtonComponent,
@@ -24,6 +26,7 @@ import { TileComponent } from './tile/tile.component';
     SortPipe,
     CommonModule,
     CoreDataModule,
+    MenuComponent,
   ],
 })
 export class SharedModule {}

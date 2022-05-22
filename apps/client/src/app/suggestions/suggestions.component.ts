@@ -2,10 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { Suggestion } from '@product-feedback-app/api-interfaces';
 import { SuggestionsFacade } from '@product-feedback-app/core-data';
 import { Observable } from 'rxjs';
+import { MenuItem } from '../shared/menu/menu.component';
 
 export interface Chip {
   text: string;
   active: boolean;
+}
+
+export interface SortBy {
+  key: string;
+  order: string;
 }
 
 @Component({
@@ -18,6 +24,8 @@ export class SuggestionsComponent implements OnInit {
   plannedSuggestions$?: Observable<Suggestion[]>;
   inProgressSuggestions$?: Observable<Suggestion[]>;
   liveSuggestions$?: Observable<Suggestion[]>;
+  isMenuOpen = false;
+  sortBy: SortBy = { key: 'upvotes', order: 'desc' };
   chipList: Chip[] = [
     {
       text: 'All',
@@ -44,6 +52,37 @@ export class SuggestionsComponent implements OnInit {
       active: false,
     },
   ];
+  menuItems: MenuItem[] = [
+    {
+      title: 'Most Upvotes',
+      sortBy: {
+        key: 'upvotes',
+        order: 'desc',
+      },
+    },
+    {
+      title: 'Least Upvotes',
+      sortBy: {
+        key: 'upvotes',
+        order: 'asc',
+      },
+    },
+    {
+      title: 'Most Comments',
+      sortBy: {
+        key: 'comments',
+        order: 'desc',
+      },
+    },
+    {
+      title: 'Least Comments',
+      sortBy: {
+        key: 'comments',
+        order: 'asc',
+      },
+    },
+  ];
+  menuItemSelected: MenuItem = this.menuItems[0];
 
   constructor(private suggestionsFacade: SuggestionsFacade) {}
 
@@ -86,5 +125,11 @@ export class SuggestionsComponent implements OnInit {
   resetChipList(chipList: Chip[], chip: Chip): void {
     chipList.forEach((c) => (c.active = false));
     chip.active = true;
+  }
+
+  onMenuItemClick(menuItem: MenuItem): void {
+    this.sortBy = menuItem.sortBy;
+    this.menuItemSelected = menuItem;
+    this.isMenuOpen = false;
   }
 }

@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Suggestion } from '@product-feedback-app/api-interfaces';
 import { Observable } from 'rxjs';
+import { SortBy } from '../suggestions.component';
 
 @Component({
   selector: 'product-feedback-app-suggestions-list',
@@ -9,7 +10,5 @@ import { Observable } from 'rxjs';
 })
 export class SuggestionsListComponent {
   @Input() allSuggestions$?: Observable<Suggestion[]>;
-
-  sortBy = 'comments';
-  ascending = false;
+  @Input() sortBy: SortBy = { key: 'upvotes', order: 'desc' };
 }
