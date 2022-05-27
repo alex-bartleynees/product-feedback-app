@@ -43,12 +43,12 @@ const suggestionsReducer = createReducer(
     ...state,
     selectedId: suggestionId,
   })),
-  on(SuggestionsActions.updateSuggestionSuccess, (state, { suggestion }) => ({
-    ...suggestionsAdapter.updateOne(
+  on(SuggestionsActions.updateSuggestionSuccess, (state, { suggestion }) =>
+    suggestionsAdapter.updateOne(
       { id: suggestion.id, changes: suggestion },
       state
-    ),
-  })),
+    )
+  ),
   on(SuggestionsActions.updateSuggestionFailure, (state, { error }) => ({
     ...state,
     error,

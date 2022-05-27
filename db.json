@@ -9,7 +9,7 @@
       "id": 1,
       "title": "Add tags for solutions",
       "category": "enhancement",
-      "upvotes": 149,
+      "upvotes": 208,
       "status": "suggestion",
       "description": "Easier to search for solutions based on a specific stack.",
       "comments": [
@@ -37,7 +37,7 @@
       "id": 2,
       "title": "Add a dark theme option",
       "category": "feature",
-      "upvotes": 99,
+      "upvotes": 106,
       "status": "suggestion",
       "description": "It would help people with light sensitivities and who prefer dark mode.",
       "comments": [
@@ -171,7 +171,7 @@
       "id": 6,
       "title": "Preview images not loading",
       "category": "bug",
-      "upvotes": 12,
+      "upvotes": 14,
       "status": "suggestion",
       "description": "Challenge preview images are missing when you apply a filter.",
       "comments": []
@@ -180,7 +180,7 @@
       "id": 7,
       "title": "More comprehensive reports",
       "category": "feature",
-      "upvotes": 170,
+      "upvotes": 326,
       "status": "planned",
       "description": "It would be great to see a more detailed breakdown of solutions.",
       "comments": [
@@ -274,7 +274,7 @@
       "id": 12,
       "title": "Add micro-interactions",
       "category": "enhancement",
-      "upvotes": 71,
+      "upvotes": 80,
       "status": "live",
       "description": "Small animations at specific points can add delight.",
       "comments": [

@@ -7,7 +7,8 @@ import { Suggestion } from '@product-feedback-app/api-interfaces';
   styleUrls: ['./suggestion-list-item.component.scss'],
 })
 export class SuggestionListItemComponent {
-  @Input() suggestion?: Suggestion;
+  @Input() suggestion?: Suggestion | null;
 
   @Output() upVoteClick = new EventEmitter<Suggestion>();
+  @Output() suggestionSelectClick = new EventEmitter<Suggestion>();
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Suggestion } from '@product-feedback-app/api-interfaces';
 import { SuggestionsFacade } from '@product-feedback-app/core-data';
 import { Observable } from 'rxjs';
@@ -84,10 +85,12 @@ export class SuggestionsComponent implements OnInit {
   ];
   menuItemSelected: MenuItem = this.menuItems[0];
 
-  constructor(private suggestionsFacade: SuggestionsFacade) {}
+  constructor(
+    private suggestionsFacade: SuggestionsFacade,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-    this.suggestionsFacade.loadSuggestions();
     this.plannedSuggestions$ = this.suggestionsFacade.filterSuggestions$(
       'status',
       'planned'
@@ -135,5 +138,10 @@ export class SuggestionsComponent implements OnInit {
 
   onUpVoteClick(suggestion: Suggestion): void {
     this.suggestionsFacade.upVoteSuggestion(suggestion);
+  }
+
+  onSuggestionClick(suggestion: Suggestion): void {
+    this.suggestionsFacade.selectSuggestion(suggestion.id);
+    this.router.navigate(['/suggestion-detail', suggestion.id]);
   }
 }

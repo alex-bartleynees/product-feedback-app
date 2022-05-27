@@ -1,0 +1,23 @@
+.navigation__buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.heading {
+  color: #647196;
+}
+
+.heading:hover {
+  text-decoration: underline;
+}
+
+.button__back {
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  cursor: pointer;
+}

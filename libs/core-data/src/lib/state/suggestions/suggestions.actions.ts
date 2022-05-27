@@ -15,7 +15,7 @@ export const loadSuggestionsFailure = createAction(
 
 export const selectSuggestion = createAction(
   '[Suggestions] Select Suggestion',
-  props<{ suggestionId: string }>()
+  props<{ suggestionId: number }>()
 );
 
 export const updateSuggestion = createAction(

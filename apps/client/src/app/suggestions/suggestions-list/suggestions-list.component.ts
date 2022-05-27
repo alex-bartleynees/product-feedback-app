@@ -13,4 +13,5 @@ export class SuggestionsListComponent {
   @Input() sortBy: SortBy = { key: 'upvotes', order: 'desc' };
 
   @Output() upVoteClick = new EventEmitter<Suggestion>();
+  @Output() suggestionSelectClick = new EventEmitter<Suggestion>();
 }

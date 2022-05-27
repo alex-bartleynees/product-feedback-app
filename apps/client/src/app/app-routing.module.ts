@@ -9,6 +9,13 @@ const routes: Routes = [
         (m) => m.SuggestionsModule
       ),
   },
+  {
+    path: 'suggestion-detail/:id',
+    loadChildren: () =>
+      import('./suggestion-detail/suggestion-detail.module').then(
+        (m) => m.SuggestionDetailModule
+      ),
+  },
 ];
 
 @NgModule({

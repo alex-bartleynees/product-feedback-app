@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { CoreDataModule } from '@product-feedback-app/core-data';
+import { SuggestionListItemComponent } from '../suggestions/suggestion-list-item/suggestion-list-item.component';
 import { ButtonComponent } from './button/button.component';
 import { ChipComponent } from './chip/chip.component';
 import { HeaderComponent } from './header/header.component';
@@ -9,7 +9,7 @@ import { SortPipe } from './pipes/sort.pipe';
 import { TileComponent } from './tile/tile.component';
 
 @NgModule({
-  imports: [CommonModule, CoreDataModule],
+  imports: [CommonModule],
   declarations: [
     ButtonComponent,
     ChipComponent,
@@ -17,6 +17,7 @@ import { TileComponent } from './tile/tile.component';
     TileComponent,
     SortPipe,
     MenuComponent,
+    SuggestionListItemComponent,
   ],
   exports: [
     ButtonComponent,
@@ -25,8 +26,8 @@ import { TileComponent } from './tile/tile.component';
     TileComponent,
     SortPipe,
     CommonModule,
-    CoreDataModule,
     MenuComponent,
+    SuggestionListItemComponent,
   ],
 })
 export class SharedModule {}

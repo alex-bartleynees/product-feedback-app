@@ -40,7 +40,7 @@ export class SuggestionsFacade {
     this.dispatch(SuggestionsActions.loadSuggestions());
   }
 
-  selectSuggestion(suggestionId: string): void {
+  selectSuggestion(suggestionId: number): void {
     this.dispatch(SuggestionsActions.selectSuggestion({ suggestionId }));
   }
 
