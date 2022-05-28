@@ -21,3 +21,20 @@
   gap: 1rem;
   cursor: pointer;
 }
+
+.comment__container {
+  display: flex;
+  margin-block: 1.5rem;
+  padding: 2rem;
+  background-color: var(--background-color);
+  border-radius: 10px;
+  flex-direction: column;
+}
+
+.comment__heading {
+  color: #3a4374;
+}
+
+.comment--border {
+  border-bottom: 1px solid rgba(151, 151, 151, 0.2);
+}

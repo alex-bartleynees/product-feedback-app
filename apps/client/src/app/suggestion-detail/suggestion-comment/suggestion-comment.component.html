@@ -1,0 +1,27 @@
+<div class="comment" *ngIf="comment">
+  <div class="comment__user-image">
+    <img class="user__image" [src]="comment.user.image" alt="user image" />
+  </div>
+
+  <div class="comment__content">
+    <div class="user__info">
+      <h4 class="user__name">{{ comment.user.name }}</h4>
+      <p class="user__user-name">@{{ comment.user.username }}</p>
+    </div>
+
+    <p class="reply__button body-3" (click)="showReply = !showReply">Reply</p>
+
+    <div class="comment__text">
+      <p>{{ comment.content }}</p>
+    </div>
+
+    <div class="comment__reply" *ngIf="showReply">
+      <textarea></textarea>
+      <product-feedback-app-button
+        ><span class="button__text"
+          >Post Reply</span
+        ></product-feedback-app-button
+      >
+    </div>
+  </div>
+</div>

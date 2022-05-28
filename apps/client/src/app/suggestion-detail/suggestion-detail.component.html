@@ -12,3 +12,21 @@
   (upVoteClick)="onUpVoteClick($event)"
   [suggestion]="selectedSuggestion$ | async"
 ></product-feedback-app-suggestion-list-item>
+
+<div class="comment__container">
+  <h3 class="comment__heading">
+    {{ (selectedSuggestion$ | async)?.comments?.length }} Comments
+  </h3>
+  <product-feedback-app-suggestion-comment
+    *ngFor="
+      let comment of (selectedSuggestion$ | async)?.comments;
+      let i = index
+    "
+    [ngClass]="{
+      'comment--border':
+        (selectedSuggestion$ | async)!.comments!.length > 1 &&
+        i !== (selectedSuggestion$ | async)!.comments!.length - 1
+    }"
+    [comment]="comment"
+  ></product-feedback-app-suggestion-comment>
+</div>
