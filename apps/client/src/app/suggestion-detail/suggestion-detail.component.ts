@@ -68,7 +68,7 @@ export class SuggestionDetailComponent implements OnInit {
     if (!this.selectedSuggestion) {
       return;
     }
-    console.log(comment);
+
     const updatedSuggestion: Suggestion = this.updateSuggestionWithReply(
       this.selectedSuggestion,
       comment
