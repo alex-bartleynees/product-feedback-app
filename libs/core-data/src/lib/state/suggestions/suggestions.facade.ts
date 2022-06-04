@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { select, Store, Action, ActionsSubject } from '@ngrx/store';
-import { Suggestion } from '@product-feedback-app/api-interfaces';
+import {
+  Suggestion,
+  SuggestionComment,
+} from '@product-feedback-app/api-interfaces';
 import { Observable } from 'rxjs';
 
 import * as SuggestionsActions from './suggestions.actions';
@@ -54,6 +57,12 @@ export class SuggestionsFacade {
       upvotes: suggestion.upvotes + 1,
     };
 
+    this.dispatch(
+      SuggestionsActions.updateSuggestion({ suggestion: updatedSuggestion })
+    );
+  }
+
+  updateSuggestion(updatedSuggestion: Suggestion): void {
     this.dispatch(
       SuggestionsActions.updateSuggestion({ suggestion: updatedSuggestion })
     );

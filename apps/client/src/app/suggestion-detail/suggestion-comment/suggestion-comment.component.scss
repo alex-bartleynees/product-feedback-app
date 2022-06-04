@@ -16,6 +16,7 @@
 
 .user__image {
   border-radius: 50%;
+  max-height: 5rem;
 }
 
 .comment__content {
@@ -57,4 +58,25 @@ textarea:focus {
 
 .reply__button:hover {
   text-decoration: underline;
+}
+
+.reply__to {
+  color: #ad1fea;
+  font-weight: 700;
+}
+
+.comment__replies {
+  margin-left: auto;
+  width: 90%;
+  position: relative;
+}
+
+.comment__replies::before {
+  content: '';
+  width: 1px;
+  height: 90%;
+  position: absolute;
+  left: -8%;
+  top: -3rem;
+  border-left: 1px solid rgba(151, 151, 151, 0.2);
 }

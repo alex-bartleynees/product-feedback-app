@@ -28,5 +28,28 @@
         i !== (selectedSuggestion$ | async)!.comments!.length - 1
     }"
     [comment]="comment"
+    (newReply)="onNewReply($event)"
   ></product-feedback-app-suggestion-comment>
 </div>
+
+<form
+  class="comment__form"
+  [formGroup]="commentForm"
+  (ngSubmit)="onSubmitComment()"
+>
+  <div class="comment__form-header">
+    <h3 class="comment__form-header-text">Add Comment</h3>
+  </div>
+
+  <div class="comment__form-content">
+    <textarea formControlName="comment" maxlength="255"></textarea>
+    <p class="comment__remaining body-2">
+      {{ 255 - commentForm.comment.value.length }} characters left
+    </p>
+    <product-feedback-app-button class="button__submit"
+      ><span class="button__text"
+        >Post Comment</span
+      ></product-feedback-app-button
+    >
+  </div>
+</form>

@@ -9,7 +9,7 @@
       "id": 1,
       "title": "Add tags for solutions",
       "category": "enhancement",
-      "upvotes": 209,
+      "upvotes": 112,
       "status": "suggestion",
       "description": "Easier to search for solutions based on a specific stack.",
       "comments": [
@@ -20,7 +20,45 @@
             "image": "./assets/user-images/image-suzanne.jpg",
             "name": "Suzanne Chang",
             "username": "upbeat1811"
-          }
+          },
+          "replies": [
+            {
+              "content": "Great idea!",
+              "replyingTo": "upbeat1811",
+              "user": {
+                "image": "../../assets/user-images/image-zena.jpg",
+                "name": "Jane Doe",
+                "username": "janedoe"
+              }
+            },
+            {
+              "content": "I have such great ideas!",
+              "replyingTo": "janedoe",
+              "user": {
+                "image": "../../assets/user-images/image-zena.jpg",
+                "name": "Jane Doe",
+                "username": "janedoe"
+              }
+            },
+            {
+              "content": "test",
+              "replyingTo": "janedoe",
+              "user": {
+                "image": "../../assets/user-images/image-zena.jpg",
+                "name": "Jane Doe",
+                "username": "janedoe"
+              }
+            },
+            {
+              "content": "test",
+              "replyingTo": "janedoe",
+              "user": {
+                "image": "../../assets/user-images/image-zena.jpg",
+                "name": "Jane Doe",
+                "username": "janedoe"
+              }
+            }
+          ]
         },
         {
           "id": 2,
@@ -29,7 +67,36 @@
             "image": "./assets/user-images/image-thomas.jpg",
             "name": "Thomas Hood",
             "username": "brawnybrave"
-          }
+          },
+          "replies": [
+            {
+              "content": "test",
+              "replyingTo": "brawnybrave",
+              "user": {
+                "image": "../../assets/user-images/image-zena.jpg",
+                "name": "Jane Doe",
+                "username": "janedoe"
+              }
+            },
+            {
+              "content": "test",
+              "replyingTo": "brawnybrave",
+              "user": {
+                "image": "../../assets/user-images/image-zena.jpg",
+                "name": "Jane Doe",
+                "username": "janedoe"
+              }
+            },
+            {
+              "content": "test",
+              "replyingTo": "janedoe",
+              "user": {
+                "image": "../../assets/user-images/image-zena.jpg",
+                "name": "Jane Doe",
+                "username": "janedoe"
+              }
+            }
+          ]
         }
       ]
     },
@@ -37,7 +104,7 @@
       "id": 2,
       "title": "Add a dark theme option",
       "category": "feature",
-      "upvotes": 136,
+      "upvotes": 99,
       "status": "suggestion",
       "description": "It would help people with light sensitivities and who prefer dark mode.",
       "comments": [
@@ -76,6 +143,42 @@
                 "name": "Ryan Welles",
                 "username": "voyager.344"
               }
+            },
+            {
+              "content": "test",
+              "replyingTo": "annev1990",
+              "user": {
+                "image": "../../assets/user-images/image-zena.jpg",
+                "name": "Jane Doe",
+                "username": "janedoe"
+              }
+            },
+            {
+              "content": "Wow!",
+              "replyingTo": "janedoe",
+              "user": {
+                "image": "../../assets/user-images/image-zena.jpg",
+                "name": "Jane Doe",
+                "username": "janedoe"
+              }
+            },
+            {
+              "content": "Great idea!",
+              "replyingTo": "janedoe",
+              "user": {
+                "image": "../../assets/user-images/image-zena.jpg",
+                "name": "Jane Doe",
+                "username": "janedoe"
+              }
+            },
+            {
+              "content": "That's brilliant!",
+              "replyingTo": "voyager.344",
+              "user": {
+                "image": "../../assets/user-images/image-zena.jpg",
+                "name": "Jane Doe",
+                "username": "janedoe"
+              }
             }
           ]
         }
@@ -85,7 +188,7 @@
       "id": 3,
       "title": "Q&A within the challenge hubs",
       "category": "feature",
-      "upvotes": 69,
+      "upvotes": 65,
       "status": "suggestion",
       "description": "Challenge-specific Q&A would make for easy reference.",
       "comments": [
@@ -104,7 +207,7 @@
       "id": 4,
       "title": "Add image/video upload to feedback",
       "category": "enhancement",
-      "upvotes": 58,
+      "upvotes": 51,
       "status": "suggestion",
       "description": "Images and screencasts can enhance comments on solutions.",
       "comments": [
@@ -171,16 +274,15 @@
       "id": 6,
       "title": "Preview images not loading",
       "category": "bug",
-      "upvotes": 14,
+      "upvotes": 3,
       "status": "suggestion",
-      "description": "Challenge preview images are missing when you apply a filter.",
-      "comments": []
+      "description": "Challenge preview images are missing when you apply a filter."
     },
     {
       "id": 7,
       "title": "More comprehensive reports",
       "category": "feature",
-      "upvotes": 336,
+      "upvotes": 123,
       "status": "planned",
       "description": "It would be great to see a more detailed breakdown of solutions.",
       "comments": [
@@ -191,7 +293,18 @@
             "image": "./assets/user-images/image-victoria.jpg",
             "name": "Victoria Mejia",
             "username": "arlen_the_marlin"
-          }
+          },
+          "replies": [
+            {
+              "content": "That's a great idea!\n",
+              "replyingTo": "arlen_the_marlin",
+              "user": {
+                "image": "../../assets/user-images/image-zena.jpg",
+                "name": "Jane Doe",
+                "username": "janedoe"
+              }
+            }
+          ]
         },
         {
           "id": 11,
@@ -227,7 +340,7 @@
       "id": 9,
       "title": "One-click portfolio generation",
       "category": "feature",
-      "upvotes": 66,
+      "upvotes": 62,
       "status": "in-progress",
       "description": "Add ability to create professional looking portfolio from profile.",
       "comments": [
@@ -265,16 +378,15 @@
       "id": 11,
       "title": "Animated solution screenshots",
       "category": "bug",
-      "upvotes": 11,
+      "upvotes": 9,
       "status": "in-progress",
-      "description": "Screenshots of solutions with animations don’t display correctly.",
-      "comments": []
+      "description": "Screenshots of solutions with animations don’t display correctly."
     },
     {
       "id": 12,
       "title": "Add micro-interactions",
       "category": "enhancement",
-      "upvotes": 85,
+      "upvotes": 71,
       "status": "live",
       "description": "Small animations at specific points can add delight.",
       "comments": [

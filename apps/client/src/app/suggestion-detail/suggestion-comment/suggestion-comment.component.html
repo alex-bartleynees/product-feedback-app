@@ -12,16 +12,44 @@
     <p class="reply__button body-3" (click)="showReply = !showReply">Reply</p>
 
     <div class="comment__text">
-      <p>{{ comment.content }}</p>
+      <p>
+        <span class="reply__to body-2" *ngIf="replyingTo"
+          >@{{ replyingTo }}</span
+        >
+        {{ comment.content }}
+      </p>
     </div>
 
-    <div class="comment__reply" *ngIf="showReply">
-      <textarea></textarea>
+    <form
+      class="comment__reply"
+      *ngIf="showReply"
+      [formGroup]="commentForm"
+      (ngSubmit)="onCommentReply()"
+    >
+      <textarea formControlName="comment" maxlength="255"></textarea>
       <product-feedback-app-button
         ><span class="button__text"
           >Post Reply</span
         ></product-feedback-app-button
       >
-    </div>
+    </form>
   </div>
 </div>
+
+<ng-container *ngIf="comment && comment.replies">
+  <div class="comment__replies">
+    <div class="comment__replies-list">
+      <div
+        class="comment__replies-list-item"
+        *ngFor="let reply of comment.replies"
+      >
+        <product-feedback-app-suggestion-comment
+          [comment]="reply"
+          [parentComment]="comment"
+          [replyingTo]="reply.replyingTo"
+          (newReply)="onNewReply($event)"
+        ></product-feedback-app-suggestion-comment>
+      </div>
+    </div>
+  </div>
+</ng-container>

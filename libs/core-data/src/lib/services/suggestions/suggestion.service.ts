@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { APP_CONFIG } from '@app-config/config';
-import { Suggestion } from '@product-feedback-app/api-interfaces';
+import { AppConfig, Suggestion } from '@product-feedback-app/api-interfaces';
 import { catchError, Observable, throwError } from 'rxjs';
 
 @Injectable({
@@ -9,7 +9,7 @@ import { catchError, Observable, throwError } from 'rxjs';
 })
 export class SuggestionService {
   constructor(
-    @Inject(APP_CONFIG) private appConfig: any,
+    @Inject(APP_CONFIG) private appConfig: AppConfig,
     private http: HttpClient
   ) {}
 

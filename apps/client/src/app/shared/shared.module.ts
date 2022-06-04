@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { SuggestionListItemComponent } from '../suggestions/suggestion-list-item/suggestion-list-item.component';
 import { ButtonComponent } from './button/button.component';
 import { ChipComponent } from './chip/chip.component';
@@ -9,7 +10,7 @@ import { SortPipe } from './pipes/sort.pipe';
 import { TileComponent } from './tile/tile.component';
 
 @NgModule({
-  imports: [CommonModule],
+  imports: [CommonModule, ReactiveFormsModule],
   declarations: [
     ButtonComponent,
     ChipComponent,
@@ -28,6 +29,7 @@ import { TileComponent } from './tile/tile.component';
     CommonModule,
     MenuComponent,
     SuggestionListItemComponent,
+    ReactiveFormsModule,
   ],
 })
 export class SharedModule {}
