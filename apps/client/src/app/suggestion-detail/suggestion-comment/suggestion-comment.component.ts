@@ -33,20 +33,14 @@ export class SuggestionCommentComponent {
       },
     };
 
-    if (this.parentComment) {
-      const newComment: SuggestionComment = this.formatComment(
-        this.parentComment,
-        newReply
-      );
-      this.newReply.emit(newComment);
-    } else {
-      const newComment: SuggestionComment = this.formatComment(
-        this.comment,
-        newReply
-      );
+    let newComment: SuggestionComment;
 
-      this.newReply.emit(newComment);
+    if (this.parentComment) {
+      newComment = this.formatComment(this.parentComment, newReply);
+    } else {
+      newComment = this.formatComment(this.comment, newReply);
     }
+    this.newReply.emit(newComment);
   }
 
   onNewReply(reply: SuggestionReply) {
