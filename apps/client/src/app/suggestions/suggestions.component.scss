@@ -2,6 +2,10 @@
   display: grid;
   grid-template-columns: 15.5rem 1fr;
   grid-template-areas: 'sidebar content';
+
+  @media (max-width: 900px) {
+    display: block;
+  }
 }
 
 .header {
@@ -10,9 +14,15 @@
 
 .sidebar__container {
   grid-area: sidebar;
+
+  @media (max-width: 900px) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
 }
 
-.content__containre {
+.content__container {
   grid-area: content;
 }
 

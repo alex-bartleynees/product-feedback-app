@@ -5,8 +5,16 @@
   min-height: 137px;
   background-color: var(--background-color);
   margin-block-end: 1.5rem;
+
+  @media (max-width: 900px) {
+    max-width: 100%;
+    min-height: 180px;
+  }
 }
 
 .radial-gradient {
   background-image: url('../../../assets/background-header.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }

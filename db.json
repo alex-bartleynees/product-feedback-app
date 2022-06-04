@@ -115,6 +115,34 @@
               }
             }
           ]
+        },
+        {
+          "content": "This is a test comment.",
+          "user": {
+            "image": "../../assets/user-images/image-zena.jpg",
+            "name": "John Doe",
+            "username": "johndoe"
+          },
+          "replies": [
+            {
+              "content": "Testing 123",
+              "replyingTo": "johndoe",
+              "user": {
+                "image": "../../assets/user-images/image-zena.jpg",
+                "name": "Jane Doe",
+                "username": "janedoe"
+              }
+            },
+            {
+              "content": "Testing 12345\n",
+              "replyingTo": "janedoe",
+              "user": {
+                "image": "../../assets/user-images/image-zena.jpg",
+                "name": "Jane Doe",
+                "username": "janedoe"
+              }
+            }
+          ]
         }
       ]
     },
@@ -191,6 +219,24 @@
             },
             {
               "content": "That's brilliant!",
+              "replyingTo": "voyager.344",
+              "user": {
+                "image": "../../assets/user-images/image-zena.jpg",
+                "name": "Jane Doe",
+                "username": "janedoe"
+              }
+            },
+            {
+              "content": "Testing",
+              "replyingTo": "annev1990",
+              "user": {
+                "image": "../../assets/user-images/image-zena.jpg",
+                "name": "Jane Doe",
+                "username": "janedoe"
+              }
+            },
+            {
+              "content": "Testing again\n",
               "replyingTo": "voyager.344",
               "user": {
                 "image": "../../assets/user-images/image-zena.jpg",
