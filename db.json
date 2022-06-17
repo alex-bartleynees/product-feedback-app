@@ -377,7 +377,18 @@
             "image": "./assets/user-images/image-jackson.jpg",
             "name": "Jackson Barker",
             "username": "countryspirit"
-          }
+          },
+          "replies": [
+            {
+              "content": "Wowza!",
+              "replyingTo": "countryspirit",
+              "user": {
+                "image": "../../assets/user-images/image-zena.jpg",
+                "name": "Jane Doe",
+                "username": "janedoe"
+              }
+            }
+          ]
         }
       ]
     },
@@ -442,7 +453,7 @@
       "id": 11,
       "title": "Animated solution screenshots",
       "category": "bug",
-      "upvotes": 9,
+      "upvotes": 10,
       "status": "in-progress",
       "description": "Screenshots of solutions with animations don’t display correctly."
     },

@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="navigation__container">
+    <button class="button__back" (click)="onBackButtonClick()">
+      <img src="../../assets/icon-arrow-left.svg" alt="back icon" />
+      <h4 class="heading">Go Back</h4>
+    </button>
+  </div>
+
+  <div class="suggestion__container">
+    <div class="suggestion__header">
+      <h1 class="suggestion__heading">Create New Feedback</h1>
+    </div>
+
+    <div class="suggestion__body">
+      <form>
+        <div class="form__group">
+          <label for="suggestion-title" class="form__label"
+            >Feedback Title</label
+          >
+          <p>Add a short, descriptive headline</p>
+          <input
+            type="text"
+            id="suggestion-title"
+            class="form__input"
+            placeholder="Title"
+          />
+        </div>
+        <div class="form__group">
+          <label for="suggestion-description" class="form__label"
+            >Category</label
+          >
+          <p>Choose a category for your feedback</p>
+          <select id="suggestion-category" class="form__input">
+            <option value="">Select a category</option>
+            <option value="">Category 1</option>
+            <option value="">Category 2</option>
+            <option value="">Category 3</option>
+          </select>
+        </div>
+
+        <div class="form__group">
+          <label for="suggestion-description" class="form__label"
+            >Feedback Detail</label
+          >
+          <p>
+            Include any specific comments on what should be improved, added,
+            etc.
+          </p>
+          <textarea
+            id="suggestion-description"
+            class="form__input"
+            placeholder="Description"
+            rows="5"
+            cols="50"
+          ></textarea>
+        </div>
+        <div class="suggestion-buttons">
+          <product-feedback-app-button class="button__cancel"
+            >Cancel</product-feedback-app-button
+          >
+          <product-feedback-app-button
+            >Add Feedback</product-feedback-app-button
+          >
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

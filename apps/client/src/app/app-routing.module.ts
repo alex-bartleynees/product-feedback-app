@@ -16,6 +16,13 @@ const routes: Routes = [
         (m) => m.SuggestionDetailModule
       ),
   },
+  {
+    path: 'suggestion',
+    loadChildren: () =>
+      import('./suggestion-edit/suggestion-edit.module').then(
+        (m) => m.SuggestionEditModule
+      ),
+  },
 ];
 
 @NgModule({

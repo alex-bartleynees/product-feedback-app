@@ -1,0 +1,45 @@
+.container {
+  display: grid;
+  place-items: center;
+  max-width: 540px;
+  margin: auto;
+}
+
+.navigation__container {
+  place-self: start;
+  margin-bottom: 5rem;
+}
+
+.heading {
+  color: #647196;
+}
+
+.heading:hover {
+  text-decoration: underline;
+}
+
+.button__back {
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.button__cancel {
+  --button-background: #3a4374;
+}
+
+.suggestion__container {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 540px;
+  min-height: 657px;
+}
+
+.suggestion__heading {
+  color: #3a4374;
+}
