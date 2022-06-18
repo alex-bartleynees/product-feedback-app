@@ -43,7 +43,7 @@ export class SuggestionDetailComponent implements OnInit {
   }
 
   onSubmitComment(): void {
-    if (!this.selectedSuggestion) {
+    if (!this.selectedSuggestion || !this.commentForm.valid) {
       return;
     }
     const comment: SuggestionComment = {
@@ -65,7 +65,7 @@ export class SuggestionDetailComponent implements OnInit {
   }
 
   onNewReply(comment: SuggestionComment): void {
-    if (!this.selectedSuggestion) {
+    if (!this.selectedSuggestion || !this.commentForm.valid) {
       return;
     }
 
