@@ -3,7 +3,7 @@ import { SortBy } from '../../suggestions/suggestions.component';
 
 export interface MenuItem {
   title: string;
-  sortBy: SortBy;
+  sortBy?: SortBy;
 }
 
 @Component({

@@ -131,7 +131,9 @@ export class SuggestionsComponent implements OnInit {
   }
 
   onMenuItemClick(menuItem: MenuItem): void {
-    this.sortBy = menuItem.sortBy;
+    if (menuItem.sortBy) {
+      this.sortBy = menuItem.sortBy;
+    }
     this.menuItemSelected = menuItem;
     this.isMenuOpen = false;
   }

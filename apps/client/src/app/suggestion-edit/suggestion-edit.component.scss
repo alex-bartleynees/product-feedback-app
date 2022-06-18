@@ -42,4 +42,46 @@
 
 .suggestion__heading {
   color: #3a4374;
+  margin-block-end: 3rem;
+}
+
+.form__label {
+  color: #3a4374;
+}
+
+.suggestion__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.suggestion-buttons {
+  margin-left: auto;
+  display: flex;
+  gap: 1rem;
+}
+
+input,
+textarea {
+  border: none;
+  background-color: #f7f8fd;
+  border-radius: 4px;
+  padding: 1rem;
+  width: 100%;
+  margin-block-start: 1rem;
+}
+
+input:focus,
+textarea:focus {
+  outline: 2px solid var(--secondary-color);
+}
+
+textarea {
+  padding: 0;
+  resize: none;
+}
+
+p {
+  color: #647196;
+  font-size: 14px;
 }
