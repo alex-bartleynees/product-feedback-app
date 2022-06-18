@@ -19,10 +19,10 @@ export class SuggestionCommentComponent {
   showReply = false;
 
   onCommentReply() {
-    if (!this.comment) {
+    if (!this.comment || !this.commentForm.valid) {
       return;
     }
-
+    console.log('onCommentReply', this.commentForm.comment.value);
     const newReply: SuggestionReply = {
       content: this.commentForm.comment.value,
       replyingTo: this.comment?.user.username,

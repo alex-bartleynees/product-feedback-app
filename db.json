@@ -291,6 +291,78 @@
             "image": "./assets/user-images/image-roxanne.jpg",
             "name": "Roxanne Travis",
             "username": "peppersprime32"
+          },
+          "replies": [
+            {
+              "content": "test",
+              "replyingTo": "peppersprime32",
+              "user": {
+                "image": "../../assets/user-images/image-zena.jpg",
+                "name": "Jane Doe",
+                "username": "janedoe"
+              }
+            },
+            {
+              "content": "",
+              "replyingTo": "peppersprime32",
+              "user": {
+                "image": "../../assets/user-images/image-zena.jpg",
+                "name": "Jane Doe",
+                "username": "janedoe"
+              }
+            },
+            {
+              "content": "",
+              "replyingTo": "peppersprime32",
+              "user": {
+                "image": "../../assets/user-images/image-zena.jpg",
+                "name": "Jane Doe",
+                "username": "janedoe"
+              }
+            },
+            {
+              "content": "",
+              "replyingTo": "peppersprime32",
+              "user": {
+                "image": "../../assets/user-images/image-zena.jpg",
+                "name": "Jane Doe",
+                "username": "janedoe"
+              }
+            },
+            {
+              "content": "test",
+              "replyingTo": "janedoe",
+              "user": {
+                "image": "../../assets/user-images/image-zena.jpg",
+                "name": "Jane Doe",
+                "username": "janedoe"
+              }
+            },
+            {
+              "content": "",
+              "replyingTo": "peppersprime32",
+              "user": {
+                "image": "../../assets/user-images/image-zena.jpg",
+                "name": "Jane Doe",
+                "username": "janedoe"
+              }
+            }
+          ]
+        },
+        {
+          "content": "test",
+          "user": {
+            "image": "../../assets/user-images/image-zena.jpg",
+            "name": "John Doe",
+            "username": "johndoe"
+          }
+        },
+        {
+          "content": "test",
+          "user": {
+            "image": "../../assets/user-images/image-zena.jpg",
+            "name": "John Doe",
+            "username": "johndoe"
           }
         }
       ]
@@ -340,13 +412,34 @@
       "category": "bug",
       "upvotes": 3,
       "status": "suggestion",
-      "description": "Challenge preview images are missing when you apply a filter."
+      "description": "Challenge preview images are missing when you apply a filter.",
+      "comments": [
+        {
+          "content": "test",
+          "user": {
+            "image": "../../assets/user-images/image-zena.jpg",
+            "name": "John Doe",
+            "username": "johndoe"
+          },
+          "replies": [
+            {
+              "content": "test",
+              "replyingTo": "johndoe",
+              "user": {
+                "image": "../../assets/user-images/image-zena.jpg",
+                "name": "Jane Doe",
+                "username": "janedoe"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": 7,
       "title": "More comprehensive reports",
       "category": "feature",
-      "upvotes": 125,
+      "upvotes": 130,
       "status": "planned",
       "description": "It would be great to see a more detailed breakdown of solutions.",
       "comments": [
@@ -477,7 +570,64 @@
             "image": "./assets/user-images/image-george.jpg",
             "name": "George Partridge",
             "username": "soccerviewer8"
-          }
+          },
+          "replies": [
+            {
+              "content": "",
+              "replyingTo": "soccerviewer8",
+              "user": {
+                "image": "../../assets/user-images/image-zena.jpg",
+                "name": "Jane Doe",
+                "username": "janedoe"
+              }
+            }
+          ]
+        },
+        {
+          "content": "test",
+          "user": {
+            "image": "../../assets/user-images/image-zena.jpg",
+            "name": "John Doe",
+            "username": "johndoe"
+          },
+          "replies": [
+            {
+              "content": "test",
+              "replyingTo": "johndoe",
+              "user": {
+                "image": "../../assets/user-images/image-zena.jpg",
+                "name": "Jane Doe",
+                "username": "janedoe"
+              }
+            },
+            {
+              "content": "test",
+              "replyingTo": "janedoe",
+              "user": {
+                "image": "../../assets/user-images/image-zena.jpg",
+                "name": "Jane Doe",
+                "username": "janedoe"
+              }
+            },
+            {
+              "content": "",
+              "replyingTo": "janedoe",
+              "user": {
+                "image": "../../assets/user-images/image-zena.jpg",
+                "name": "Jane Doe",
+                "username": "janedoe"
+              }
+            },
+            {
+              "content": "",
+              "replyingTo": "johndoe",
+              "user": {
+                "image": "../../assets/user-images/image-zena.jpg",
+                "name": "Jane Doe",
+                "username": "janedoe"
+              }
+            }
+          ]
         }
       ]
     },
@@ -556,6 +706,24 @@
           ]
         }
       ]
+    },
+    {
+      "title": "Test",
+      "category": "Feature",
+      "upvotes": 0,
+      "status": "",
+      "description": "test",
+      "comments": [],
+      "id": 13
+    },
+    {
+      "title": "Great!",
+      "category": "Feature",
+      "upvotes": 0,
+      "status": "",
+      "description": "What a great idea! ",
+      "comments": [],
+      "id": 14
     }
   ]
 }

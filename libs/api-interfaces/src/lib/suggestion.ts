@@ -1,7 +1,7 @@
 import { SuggestionComment } from './suggestion-comment';
 
 export interface Suggestion {
-  id: number;
+  id?: number;
   title: string;
   category: string;
   upvotes: number;

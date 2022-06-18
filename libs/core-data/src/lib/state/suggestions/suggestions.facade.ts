@@ -67,4 +67,8 @@ export class SuggestionsFacade {
       SuggestionsActions.updateSuggestion({ suggestion: updatedSuggestion })
     );
   }
+
+  createSuggestion(suggestion: Suggestion): void {
+    this.dispatch(SuggestionsActions.createSuggestion({ suggestion }));
+  }
 }

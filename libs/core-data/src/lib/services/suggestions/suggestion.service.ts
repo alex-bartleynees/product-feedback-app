@@ -22,8 +22,17 @@ export class SuggestionService {
   }
 
   update(suggestion: Suggestion): Observable<Suggestion> {
+    if (!suggestion.id) {
+      throw new Error('Suggestion must have an id');
+    }
     return this.http
       .put<Suggestion>(this.getUrlForId(suggestion.id), suggestion)
+      .pipe(catchError((error) => throwError(() => error)));
+  }
+
+  create(suggestion: Suggestion): Observable<Suggestion> {
+    return this.http
+      .post<Suggestion>(this.getUrl(), suggestion)
       .pipe(catchError((error) => throwError(() => error)));
   }
 

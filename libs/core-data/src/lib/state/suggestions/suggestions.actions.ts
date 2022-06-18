@@ -32,3 +32,18 @@ export const updateSuggestionFailure = createAction(
   '[Suggestions] Update Suggestion Failure',
   props<{ error: any }>()
 );
+
+export const createSuggestion = createAction(
+  '[Suggestions] Create Suggestion',
+  props<{ suggestion: Suggestion }>()
+);
+
+export const createSuggestionSuccess = createAction(
+  '[Suggestions] Create Suggestion Success',
+  props<{ suggestion: Suggestion }>()
+);
+
+export const createSuggestionFailure = createAction(
+  '[Suggestions] Create Suggestion Failure',
+  props<{ error: any }>()
+);

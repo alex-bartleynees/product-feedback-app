@@ -37,4 +37,17 @@ export class SuggestionsEffects {
       )
     )
   );
+
+  createSuggestion$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(SuggestionsActions.createSuggestion),
+      mergeMap((action) => this.suggestionsService.create(action.suggestion)),
+      map((suggestion: Suggestion) =>
+        SuggestionsActions.createSuggestionSuccess({ suggestion })
+      ),
+      catchError(async (error) =>
+        SuggestionsActions.createSuggestionFailure({ error })
+      )
+    )
+  );
 }

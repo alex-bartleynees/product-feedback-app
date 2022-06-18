@@ -143,12 +143,14 @@ export class SuggestionsComponent implements OnInit {
   }
 
   onSuggestionClick(suggestion: Suggestion): void {
+    if (!suggestion.id) {
+      return;
+    }
     this.suggestionsFacade.selectSuggestion(suggestion.id);
     this.router.navigate(['/suggestion-detail', suggestion.id]);
   }
 
   onAddFeedbackButtonClick(): void {
-    console.log('Add feedback button clicked');
     this.router.navigate(['/suggestion']);
   }
 }

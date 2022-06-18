@@ -57,7 +57,9 @@ export class SuggestionDetailComponent implements OnInit {
 
     const updatedSuggestion: Suggestion = {
       ...this.selectedSuggestion,
-      comments: [...this.selectedSuggestion.comments, comment],
+      comments: this.selectedSuggestion.comments
+        ? [...this.selectedSuggestion.comments, comment]
+        : [comment],
     };
 
     this.suggestionsFacade.updateSuggestion(updatedSuggestion);
@@ -65,7 +67,7 @@ export class SuggestionDetailComponent implements OnInit {
   }
 
   onNewReply(comment: SuggestionComment): void {
-    if (!this.selectedSuggestion || !this.commentForm.valid) {
+    if (!this.selectedSuggestion) {
       return;
     }
 

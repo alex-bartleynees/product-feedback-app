@@ -14,6 +14,9 @@
   padding: 1rem;
   color: #647196;
   cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .menu__item--active {

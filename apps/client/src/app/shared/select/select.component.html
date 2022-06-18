@@ -1,5 +1,5 @@
 <div class="select__container">
-  <input readonly (click)="openMenu()" [ngModel]="menuItemSelected.title" />
+  <input [ngModel]="menuItemSelected?.title" readonly (click)="openMenu()" />
   <product-feedback-app-menu
     *ngIf="isMenuOpen"
     [menuItems]="menuItems"
