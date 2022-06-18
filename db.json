@@ -346,7 +346,7 @@
       "id": 7,
       "title": "More comprehensive reports",
       "category": "feature",
-      "upvotes": 123,
+      "upvotes": 125,
       "status": "planned",
       "description": "It would be great to see a more detailed breakdown of solutions.",
       "comments": [
@@ -362,6 +362,15 @@
             {
               "content": "That's a great idea!\n",
               "replyingTo": "arlen_the_marlin",
+              "user": {
+                "image": "../../assets/user-images/image-zena.jpg",
+                "name": "Jane Doe",
+                "username": "janedoe"
+              }
+            },
+            {
+              "content": "",
+              "replyingTo": "janedoe",
               "user": {
                 "image": "../../assets/user-images/image-zena.jpg",
                 "name": "Jane Doe",
@@ -389,6 +398,14 @@
               }
             }
           ]
+        },
+        {
+          "content": "",
+          "user": {
+            "image": "../../assets/user-images/image-zena.jpg",
+            "name": "John Doe",
+            "username": "johndoe"
+          }
         }
       ]
     },

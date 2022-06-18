@@ -14,4 +14,9 @@ export class SuggestionsListComponent {
 
   @Output() upVoteClick = new EventEmitter<Suggestion>();
   @Output() suggestionSelectClick = new EventEmitter<Suggestion>();
+  @Output() addFeedbackButtonClick = new EventEmitter<void>()
+
+  onButtonClick() {
+    this.addFeedbackButtonClick.emit();
+  }
 }

@@ -11,4 +11,9 @@ export class HeaderComponent {
   @Input() numberOfSuggestions: number | undefined = 0;
   @Input() menuItemSelected?: MenuItem;
   @Output() openMenu = new EventEmitter();
+  @Output() addFeedbackButtonClick = new EventEmitter<void>();
+
+  onAddFeedbackButtonClick() {
+    this.addFeedbackButtonClick.emit();
+  }
 }

@@ -53,12 +53,14 @@
       [numberOfSuggestions]="(allSuggestions$ | async)?.length"
       [menuItemSelected]="menuItemSelected"
       (openMenu)="isMenuOpen = !isMenuOpen"
+      (addFeedbackButtonClick)="onAddFeedbackButtonClick()"
     ></product-feedback-app-header>
     <product-feedback-app-suggestions-list
       [sortBy]="sortBy"
       [allSuggestions$]="allSuggestions$"
       (upVoteClick)="onUpVoteClick($event)"
       (suggestionSelectClick)="onSuggestionClick($event)"
+      (addFeedbackButtonClick)="onAddFeedbackButtonClick()"
     ></product-feedback-app-suggestions-list>
   </main>
 </div>
