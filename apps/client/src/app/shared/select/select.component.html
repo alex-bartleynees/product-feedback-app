@@ -1,14 +1,15 @@
-<div class="select__container">
+<div class="select select__container">
   <div
-    class="select"
+    class="select select__dropdown"
     (click)="openMenu()"
     [ngClass]="{ 'select--active': isMenuOpen }"
   >
-    <span>{{ menuItemSelected?.title | titlecase }}</span>
+    {{ menuItemSelected?.title | titlecase }}
     <img
       src="../../../assets/icon-arrow-down.svg"
       alt="dropdown arrow"
       [@arrowRotate]="isMenuOpen ? 'up' : 'down'"
+      class="select"
     />
   </div>
   <product-feedback-app-menu

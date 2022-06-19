@@ -5,7 +5,14 @@ import {
   transition,
   animate,
 } from '@angular/animations';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  HostListener,
+  Input,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { SuggestionForm } from '../../forms/suggestion-form';
 import { MenuItem } from '../menu/menu.component';
 
@@ -31,6 +38,13 @@ export class SelectComponent implements OnInit {
 
   isMenuOpen = false;
 
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent) {
+    if (!(event.target as HTMLElement).classList.contains('select')) {
+      this.isMenuOpen = false;
+    }
+  }
+
   ngOnInit(): void {
     if (!this.menuItemSelected) {
       this.menuItemSelected = this.menuItems[0];
@@ -41,7 +55,7 @@ export class SelectComponent implements OnInit {
   }
 
   openMenu() {
-    this.isMenuOpen = true;
+    this.isMenuOpen = !this.isMenuOpen;
   }
 
   onMenuItemClick(menuItem: MenuItem) {
