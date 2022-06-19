@@ -17,7 +17,7 @@
 }
 
 .chip__container:hover {
-  background-color: #cfd7ff;
+  background-color: var(--chip-hover-color, #cfd7ff);
 }
 
 .chip-text {

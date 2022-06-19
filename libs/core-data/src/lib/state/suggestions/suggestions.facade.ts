@@ -1,10 +1,7 @@
 import { Injectable } from '@angular/core';
 import { select, Store, Action, ActionsSubject } from '@ngrx/store';
-import {
-  Suggestion,
-  SuggestionComment,
-} from '@product-feedback-app/api-interfaces';
-import { Observable } from 'rxjs';
+import { Suggestion } from '@product-feedback-app/api-interfaces';
+import { filter, Observable } from 'rxjs';
 
 import * as SuggestionsActions from './suggestions.actions';
 import * as SuggestionsSelectors from './suggestions.selectors';
@@ -19,19 +16,23 @@ export class SuggestionsFacade {
     select(SuggestionsSelectors.getSelected)
   );
 
-  // mutations$ = this.actions$.pipe(
-  //   filter(
-  //     (action: Action) =>
-  //       action.type === SuggestionsActions.createSuggestion.type ||
-  //       action.type === SuggestionsActions.updateSuggestion.type ||
-  //       action.type === SuggestionsActions.deleteSuggestion.type
-  //   )
-  // );
+  mutations$ = this.actions$.pipe(
+    filter(
+      (action: Action) =>
+        action.type === SuggestionsActions.createSuggestion.type ||
+        action.type === SuggestionsActions.updateSuggestion.type ||
+        action.type === SuggestionsActions.deleteSuggestion.type
+    )
+  );
 
   constructor(
     private readonly store: Store,
     private actions$: ActionsSubject
   ) {}
+
+  reset(): void {
+    this.dispatch(SuggestionsActions.loadSuggestions());
+  }
 
   filterSuggestions$(category: string, prop: string): Observable<Suggestion[]> {
     return this.store.pipe(
@@ -70,5 +71,9 @@ export class SuggestionsFacade {
 
   createSuggestion(suggestion: Suggestion): void {
     this.dispatch(SuggestionsActions.createSuggestion({ suggestion }));
+  }
+
+  deleteSuggestion(id: number): void {
+    this.dispatch(SuggestionsActions.deleteSuggestion({ suggestionId: id }));
   }
 }

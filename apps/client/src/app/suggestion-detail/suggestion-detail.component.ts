@@ -23,7 +23,6 @@ export class SuggestionDetailComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.suggestionsFacade.loadSuggestions();
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
       this.suggestionsFacade.selectSuggestion(+id);
@@ -76,6 +75,10 @@ export class SuggestionDetailComponent implements OnInit {
       comment
     );
     this.suggestionsFacade.updateSuggestion(updatedSuggestion);
+  }
+
+  onEditFeedbackClick(): void {
+    this.router.navigate(['/suggestion', this.selectedSuggestion?.id]);
   }
 
   private updateSuggestionWithReply(

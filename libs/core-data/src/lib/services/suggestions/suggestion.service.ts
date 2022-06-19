@@ -36,6 +36,12 @@ export class SuggestionService {
       .pipe(catchError((error) => throwError(() => error)));
   }
 
+  delete(id: number): Observable<number> {
+    return this.http
+      .delete<number>(this.getUrlForId(id))
+      .pipe(catchError((error) => throwError(() => error)));
+  }
+
   private getUrl() {
     return `${this.appConfig.apiEndpoint}${this.model}`;
   }

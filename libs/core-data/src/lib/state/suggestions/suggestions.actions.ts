@@ -47,3 +47,18 @@ export const createSuggestionFailure = createAction(
   '[Suggestions] Create Suggestion Failure',
   props<{ error: any }>()
 );
+
+export const deleteSuggestion = createAction(
+  '[Suggestions] Delete Suggestion',
+  props<{ suggestionId: number }>()
+);
+
+export const deleteSuggestionSuccess = createAction(
+  '[Suggestions] Delete Suggestion Success',
+  props<{ suggestionId: number }>()
+);
+
+export const deleteSuggestionFailure = createAction(
+  '[Suggestions] Delete Suggestion Failure',
+  props<{ error: any }>()
+);

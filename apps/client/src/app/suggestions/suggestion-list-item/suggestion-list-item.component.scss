@@ -34,3 +34,7 @@
     transform: scale(1.2);
   }
 }
+
+.category-chip {
+  --chip-hover-color: var(--surface-color);
+}

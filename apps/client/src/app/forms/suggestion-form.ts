@@ -4,6 +4,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { Suggestion } from '@product-feedback-app/api-interfaces';
 
 const formBuilder = new FormBuilder();
 const getForm = () =>
@@ -24,7 +25,8 @@ const getForm = () =>
         validators: [Validators.required],
       },
     ],
-    feedback: [
+    status: [''],
+    description: [
       '',
       {
         validators: [
@@ -37,8 +39,12 @@ const getForm = () =>
   });
 
 export class SuggestionForm extends FormGroup {
-  constructor() {
+  constructor(suggestion?: Suggestion) {
     super(getForm().controls);
+
+    if (suggestion) {
+      this.patchValue(suggestion);
+    }
   }
 
   get title(): AbstractControl {
@@ -49,7 +55,11 @@ export class SuggestionForm extends FormGroup {
     return this.get('category') as AbstractControl;
   }
 
-  get feedback(): AbstractControl {
-    return this.get('feedback') as AbstractControl;
+  get statusControl(): AbstractControl {
+    return this.get('status') as AbstractControl;
+  }
+
+  get description(): AbstractControl {
+    return this.get('description') as AbstractControl;
   }
 }

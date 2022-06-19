@@ -61,6 +61,13 @@ const suggestionsReducer = createReducer(
   on(SuggestionsActions.createSuggestionFailure, (state, { error }) => ({
     ...state,
     error,
+  })),
+  on(SuggestionsActions.deleteSuggestionSuccess, (state, { suggestionId }) =>
+    suggestionsAdapter.removeOne(suggestionId, state)
+  ),
+  on(SuggestionsActions.deleteSuggestionFailure, (state, { error }) => ({
+    ...state,
+    error,
   }))
 );
 

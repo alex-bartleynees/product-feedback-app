@@ -20,45 +20,7 @@
             "image": "./assets/user-images/image-suzanne.jpg",
             "name": "Suzanne Chang",
             "username": "upbeat1811"
-          },
-          "replies": [
-            {
-              "content": "Great idea!",
-              "replyingTo": "upbeat1811",
-              "user": {
-                "image": "../../assets/user-images/image-zena.jpg",
-                "name": "Jane Doe",
-                "username": "janedoe"
-              }
-            },
-            {
-              "content": "I have such great ideas!",
-              "replyingTo": "janedoe",
-              "user": {
-                "image": "../../assets/user-images/image-zena.jpg",
-                "name": "Jane Doe",
-                "username": "janedoe"
-              }
-            },
-            {
-              "content": "test",
-              "replyingTo": "janedoe",
-              "user": {
-                "image": "../../assets/user-images/image-zena.jpg",
-                "name": "Jane Doe",
-                "username": "janedoe"
-              }
-            },
-            {
-              "content": "test",
-              "replyingTo": "janedoe",
-              "user": {
-                "image": "../../assets/user-images/image-zena.jpg",
-                "name": "Jane Doe",
-                "username": "janedoe"
-              }
-            }
-          ]
+          }
         },
         {
           "id": 2,
@@ -67,82 +29,7 @@
             "image": "./assets/user-images/image-thomas.jpg",
             "name": "Thomas Hood",
             "username": "brawnybrave"
-          },
-          "replies": [
-            {
-              "content": "test",
-              "replyingTo": "brawnybrave",
-              "user": {
-                "image": "../../assets/user-images/image-zena.jpg",
-                "name": "Jane Doe",
-                "username": "janedoe"
-              }
-            },
-            {
-              "content": "test",
-              "replyingTo": "brawnybrave",
-              "user": {
-                "image": "../../assets/user-images/image-zena.jpg",
-                "name": "Jane Doe",
-                "username": "janedoe"
-              }
-            },
-            {
-              "content": "test",
-              "replyingTo": "janedoe",
-              "user": {
-                "image": "../../assets/user-images/image-zena.jpg",
-                "name": "Jane Doe",
-                "username": "janedoe"
-              }
-            },
-            {
-              "content": "GRSGFGRFSDGFD",
-              "replyingTo": "brawnybrave",
-              "user": {
-                "image": "../../assets/user-images/image-zena.jpg",
-                "name": "Jane Doe",
-                "username": "janedoe"
-              }
-            },
-            {
-              "content": "DFGDFGDFGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG",
-              "replyingTo": "janedoe",
-              "user": {
-                "image": "../../assets/user-images/image-zena.jpg",
-                "name": "Jane Doe",
-                "username": "janedoe"
-              }
-            }
-          ]
-        },
-        {
-          "content": "This is a test comment.",
-          "user": {
-            "image": "../../assets/user-images/image-zena.jpg",
-            "name": "John Doe",
-            "username": "johndoe"
-          },
-          "replies": [
-            {
-              "content": "Testing 123",
-              "replyingTo": "johndoe",
-              "user": {
-                "image": "../../assets/user-images/image-zena.jpg",
-                "name": "Jane Doe",
-                "username": "janedoe"
-              }
-            },
-            {
-              "content": "Testing 12345\n",
-              "replyingTo": "janedoe",
-              "user": {
-                "image": "../../assets/user-images/image-zena.jpg",
-                "name": "Jane Doe",
-                "username": "janedoe"
-              }
-            }
-          ]
+          }
         }
       ]
     },
@@ -188,60 +75,6 @@
                 "image": "./assets/user-images/image-ryan.jpg",
                 "name": "Ryan Welles",
                 "username": "voyager.344"
-              }
-            },
-            {
-              "content": "test",
-              "replyingTo": "annev1990",
-              "user": {
-                "image": "../../assets/user-images/image-zena.jpg",
-                "name": "Jane Doe",
-                "username": "janedoe"
-              }
-            },
-            {
-              "content": "Wow!",
-              "replyingTo": "janedoe",
-              "user": {
-                "image": "../../assets/user-images/image-zena.jpg",
-                "name": "Jane Doe",
-                "username": "janedoe"
-              }
-            },
-            {
-              "content": "Great idea!",
-              "replyingTo": "janedoe",
-              "user": {
-                "image": "../../assets/user-images/image-zena.jpg",
-                "name": "Jane Doe",
-                "username": "janedoe"
-              }
-            },
-            {
-              "content": "That's brilliant!",
-              "replyingTo": "voyager.344",
-              "user": {
-                "image": "../../assets/user-images/image-zena.jpg",
-                "name": "Jane Doe",
-                "username": "janedoe"
-              }
-            },
-            {
-              "content": "Testing",
-              "replyingTo": "annev1990",
-              "user": {
-                "image": "../../assets/user-images/image-zena.jpg",
-                "name": "Jane Doe",
-                "username": "janedoe"
-              }
-            },
-            {
-              "content": "Testing again\n",
-              "replyingTo": "voyager.344",
-              "user": {
-                "image": "../../assets/user-images/image-zena.jpg",
-                "name": "Jane Doe",
-                "username": "janedoe"
               }
             }
           ]
@@ -291,78 +124,6 @@
             "image": "./assets/user-images/image-roxanne.jpg",
             "name": "Roxanne Travis",
             "username": "peppersprime32"
-          },
-          "replies": [
-            {
-              "content": "test",
-              "replyingTo": "peppersprime32",
-              "user": {
-                "image": "../../assets/user-images/image-zena.jpg",
-                "name": "Jane Doe",
-                "username": "janedoe"
-              }
-            },
-            {
-              "content": "",
-              "replyingTo": "peppersprime32",
-              "user": {
-                "image": "../../assets/user-images/image-zena.jpg",
-                "name": "Jane Doe",
-                "username": "janedoe"
-              }
-            },
-            {
-              "content": "",
-              "replyingTo": "peppersprime32",
-              "user": {
-                "image": "../../assets/user-images/image-zena.jpg",
-                "name": "Jane Doe",
-                "username": "janedoe"
-              }
-            },
-            {
-              "content": "",
-              "replyingTo": "peppersprime32",
-              "user": {
-                "image": "../../assets/user-images/image-zena.jpg",
-                "name": "Jane Doe",
-                "username": "janedoe"
-              }
-            },
-            {
-              "content": "test",
-              "replyingTo": "janedoe",
-              "user": {
-                "image": "../../assets/user-images/image-zena.jpg",
-                "name": "Jane Doe",
-                "username": "janedoe"
-              }
-            },
-            {
-              "content": "",
-              "replyingTo": "peppersprime32",
-              "user": {
-                "image": "../../assets/user-images/image-zena.jpg",
-                "name": "Jane Doe",
-                "username": "janedoe"
-              }
-            }
-          ]
-        },
-        {
-          "content": "test",
-          "user": {
-            "image": "../../assets/user-images/image-zena.jpg",
-            "name": "John Doe",
-            "username": "johndoe"
-          }
-        },
-        {
-          "content": "test",
-          "user": {
-            "image": "../../assets/user-images/image-zena.jpg",
-            "name": "John Doe",
-            "username": "johndoe"
           }
         }
       ]
@@ -412,34 +173,13 @@
       "category": "bug",
       "upvotes": 3,
       "status": "suggestion",
-      "description": "Challenge preview images are missing when you apply a filter.",
-      "comments": [
-        {
-          "content": "test",
-          "user": {
-            "image": "../../assets/user-images/image-zena.jpg",
-            "name": "John Doe",
-            "username": "johndoe"
-          },
-          "replies": [
-            {
-              "content": "test",
-              "replyingTo": "johndoe",
-              "user": {
-                "image": "../../assets/user-images/image-zena.jpg",
-                "name": "Jane Doe",
-                "username": "janedoe"
-              }
-            }
-          ]
-        }
-      ]
+      "description": "Challenge preview images are missing when you apply a filter."
     },
     {
       "id": 7,
       "title": "More comprehensive reports",
       "category": "feature",
-      "upvotes": 130,
+      "upvotes": 123,
       "status": "planned",
       "description": "It would be great to see a more detailed breakdown of solutions.",
       "comments": [
@@ -450,54 +190,7 @@
             "image": "./assets/user-images/image-victoria.jpg",
             "name": "Victoria Mejia",
             "username": "arlen_the_marlin"
-          },
-          "replies": [
-            {
-              "content": "That's a great idea!\n",
-              "replyingTo": "arlen_the_marlin",
-              "user": {
-                "image": "../../assets/user-images/image-zena.jpg",
-                "name": "Jane Doe",
-                "username": "janedoe"
-              }
-            },
-            {
-              "content": "",
-              "replyingTo": "janedoe",
-              "user": {
-                "image": "../../assets/user-images/image-zena.jpg",
-                "name": "Jane Doe",
-                "username": "janedoe"
-              }
-            },
-            {
-              "content": "",
-              "replyingTo": "arlen_the_marlin",
-              "user": {
-                "image": "../../assets/user-images/image-zena.jpg",
-                "name": "Jane Doe",
-                "username": "janedoe"
-              }
-            },
-            {
-              "content": "",
-              "replyingTo": "arlen_the_marlin",
-              "user": {
-                "image": "../../assets/user-images/image-zena.jpg",
-                "name": "Jane Doe",
-                "username": "janedoe"
-              }
-            },
-            {
-              "content": "",
-              "replyingTo": "arlen_the_marlin",
-              "user": {
-                "image": "../../assets/user-images/image-zena.jpg",
-                "name": "Jane Doe",
-                "username": "janedoe"
-              }
-            }
-          ]
+          }
         },
         {
           "id": 11,
@@ -506,51 +199,6 @@
             "image": "./assets/user-images/image-jackson.jpg",
             "name": "Jackson Barker",
             "username": "countryspirit"
-          },
-          "replies": [
-            {
-              "content": "Wowza!",
-              "replyingTo": "countryspirit",
-              "user": {
-                "image": "../../assets/user-images/image-zena.jpg",
-                "name": "Jane Doe",
-                "username": "janedoe"
-              }
-            },
-            {
-              "content": "",
-              "replyingTo": "countryspirit",
-              "user": {
-                "image": "../../assets/user-images/image-zena.jpg",
-                "name": "Jane Doe",
-                "username": "janedoe"
-              }
-            },
-            {
-              "content": "",
-              "replyingTo": "countryspirit",
-              "user": {
-                "image": "../../assets/user-images/image-zena.jpg",
-                "name": "Jane Doe",
-                "username": "janedoe"
-              }
-            }
-          ]
-        },
-        {
-          "content": "",
-          "user": {
-            "image": "../../assets/user-images/image-zena.jpg",
-            "name": "John Doe",
-            "username": "johndoe"
-          }
-        },
-        {
-          "content": "Test",
-          "user": {
-            "image": "../../assets/user-images/image-zena.jpg",
-            "name": "John Doe",
-            "username": "johndoe"
           }
         }
       ]
@@ -570,64 +218,7 @@
             "image": "./assets/user-images/image-george.jpg",
             "name": "George Partridge",
             "username": "soccerviewer8"
-          },
-          "replies": [
-            {
-              "content": "",
-              "replyingTo": "soccerviewer8",
-              "user": {
-                "image": "../../assets/user-images/image-zena.jpg",
-                "name": "Jane Doe",
-                "username": "janedoe"
-              }
-            }
-          ]
-        },
-        {
-          "content": "test",
-          "user": {
-            "image": "../../assets/user-images/image-zena.jpg",
-            "name": "John Doe",
-            "username": "johndoe"
-          },
-          "replies": [
-            {
-              "content": "test",
-              "replyingTo": "johndoe",
-              "user": {
-                "image": "../../assets/user-images/image-zena.jpg",
-                "name": "Jane Doe",
-                "username": "janedoe"
-              }
-            },
-            {
-              "content": "test",
-              "replyingTo": "janedoe",
-              "user": {
-                "image": "../../assets/user-images/image-zena.jpg",
-                "name": "Jane Doe",
-                "username": "janedoe"
-              }
-            },
-            {
-              "content": "",
-              "replyingTo": "janedoe",
-              "user": {
-                "image": "../../assets/user-images/image-zena.jpg",
-                "name": "Jane Doe",
-                "username": "janedoe"
-              }
-            },
-            {
-              "content": "",
-              "replyingTo": "johndoe",
-              "user": {
-                "image": "../../assets/user-images/image-zena.jpg",
-                "name": "Jane Doe",
-                "username": "janedoe"
-              }
-            }
-          ]
+          }
         }
       ]
     },
@@ -673,7 +264,7 @@
       "id": 11,
       "title": "Animated solution screenshots",
       "category": "bug",
-      "upvotes": 10,
+      "upvotes": 9,
       "status": "in-progress",
       "description": "Screenshots of solutions with animations don’t display correctly."
     },
@@ -706,24 +297,6 @@
           ]
         }
       ]
-    },
-    {
-      "title": "Test",
-      "category": "Feature",
-      "upvotes": 0,
-      "status": "",
-      "description": "test",
-      "comments": [],
-      "id": 13
-    },
-    {
-      "title": "Great!",
-      "category": "Feature",
-      "upvotes": 0,
-      "status": "",
-      "description": "What a great idea! ",
-      "comments": [],
-      "id": 14
     }
   ]
 }

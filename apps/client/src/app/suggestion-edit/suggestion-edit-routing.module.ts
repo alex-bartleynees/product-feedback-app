@@ -7,6 +7,10 @@ const routes: Routes = [
     path: '',
     component: SuggestionEditComponent,
   },
+  {
+    path: ':id',
+    component: SuggestionEditComponent,
+  },
 ];
 
 @NgModule({

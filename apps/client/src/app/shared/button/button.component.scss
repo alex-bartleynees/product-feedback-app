@@ -24,7 +24,7 @@
 }
 
 .button:hover {
-  background: #c75af6;
+  background: var(--button-hover-color, #c75af6);
 }
 
 .button--secondary:hover {

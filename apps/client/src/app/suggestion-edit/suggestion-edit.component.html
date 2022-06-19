@@ -8,10 +8,23 @@
 
   <div class="suggestion__container">
     <div class="suggestion__icon">
-      <img src="../../assets/icon-new-feedback.svg" alt="new suggestion icon" />
+      <img
+        *ngIf="editMode; else notEditMode"
+        src="../../assets/icon-edit-feedback.svg"
+        alt="edit suggestion icon"
+        class="suggestion__icon--edit"
+      />
+      <ng-template #notEditMode>
+        <img
+          src="../../assets/icon-new-feedback.svg"
+          alt="new suggestion icon"
+        />
+      </ng-template>
     </div>
     <div class="suggestion__header">
-      <h1 class="suggestion__heading">Create New Feedback</h1>
+      <h1 class="suggestion__heading">
+        {{ editTitle ? editTitle : 'Create New Feedback' }}
+      </h1>
     </div>
 
     <form
@@ -39,7 +52,23 @@
         <product-feedback-app-select
           [suggestionForm]="suggestionForm"
           [menuItems]="menuItems"
+          [menuItemSelected]="{
+            title: this.selectedSuggestion?.category ?? ''
+          }"
           [control]="'category'"
+        ></product-feedback-app-select>
+      </div>
+
+      <div class="form__group" *ngIf="editMode">
+        <label for="suggestion-description" class="form__label"
+          ><h4>Update Status</h4></label
+        >
+        <p>Change feature state</p>
+        <product-feedback-app-select
+          [suggestionForm]="suggestionForm"
+          [menuItems]="statusItems"
+          [menuItemSelected]="{ title: this.selectedSuggestion?.status ?? '' }"
+          [control]="'status'"
         ></product-feedback-app-select>
       </div>
 
@@ -51,21 +80,33 @@
           Include any specific comments on what should be improved, added, etc.
         </p>
         <textarea
-          formControlName="feedback"
+          formControlName="description"
           id="suggestion-description"
           class="form__input"
           rows="5"
           cols="50"
         ></textarea>
       </div>
+
       <div class="suggestion-buttons">
         <product-feedback-app-button
-          class="button__cancel"
-          (click)="onCancelButtonClick($event)"
+          *ngIf="editMode"
+          class="button__delete"
+          (click)="onDeleteButtonClick($event)"
         >
-          Cancel</product-feedback-app-button
+          Delete</product-feedback-app-button
         >
-        <product-feedback-app-button>Add Feedback</product-feedback-app-button>
+        <div class="buttons__right">
+          <product-feedback-app-button
+            class="button__cancel"
+            (click)="onCancelButtonClick($event)"
+          >
+            Cancel</product-feedback-app-button
+          >
+          <product-feedback-app-button
+            >Add Feedback</product-feedback-app-button
+          >
+        </div>
       </div>
     </form>
   </div>

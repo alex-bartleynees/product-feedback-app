@@ -50,4 +50,17 @@ export class SuggestionsEffects {
       )
     )
   );
+
+  deleteSuggestion$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(SuggestionsActions.deleteSuggestion),
+      mergeMap((action) => this.suggestionsService.delete(action.suggestionId)),
+      map((suggestionId: number) =>
+        SuggestionsActions.deleteSuggestionSuccess({ suggestionId })
+      ),
+      catchError(async (error) =>
+        SuggestionsActions.deleteSuggestionFailure({ error })
+      )
+    )
+  );
 }

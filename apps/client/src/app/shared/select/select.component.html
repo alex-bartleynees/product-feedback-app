@@ -1,5 +1,16 @@
 <div class="select__container">
-  <input [ngModel]="menuItemSelected?.title" readonly (click)="openMenu()" />
+  <div
+    class="select"
+    (click)="openMenu()"
+    [ngClass]="{ 'select--active': isMenuOpen }"
+  >
+    <span>{{ menuItemSelected?.title | titlecase }}</span>
+    <img
+      src="../../../assets/icon-arrow-down.svg"
+      alt="dropdown arrow"
+      [@arrowRotate]="isMenuOpen ? 'up' : 'down'"
+    />
+  </div>
   <product-feedback-app-menu
     *ngIf="isMenuOpen"
     [menuItems]="menuItems"
