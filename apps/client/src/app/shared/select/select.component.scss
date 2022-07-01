@@ -8,6 +8,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  min-height: 55px;
 }
 
 .select--active {
@@ -16,6 +17,10 @@
 
 .select__container {
   position: relative;
+}
+
+.select-icon {
+  margin-left: auto;
 }
 
 product-feedback-app-menu {
