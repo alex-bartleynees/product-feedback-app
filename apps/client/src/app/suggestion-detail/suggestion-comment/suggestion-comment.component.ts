@@ -1,4 +1,10 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 import { SuggestionComment } from '@product-feedback-app/api-interfaces';
 import { SuggestionReply } from '@product-feedback-app/api-interfaces';
 import { CommentForm } from '../../forms/comment-form';
@@ -7,6 +13,7 @@ import { CommentForm } from '../../forms/comment-form';
   selector: 'product-feedback-app-suggestion-comment',
   templateUrl: './suggestion-comment.component.html',
   styleUrls: ['./suggestion-comment.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SuggestionCommentComponent {
   @Input() comment?: SuggestionComment;

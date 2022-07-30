@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Suggestion } from '@product-feedback-app/api-interfaces';
 import { SuggestionsFacade } from '@product-feedback-app/core-data';
@@ -19,6 +19,7 @@ export interface SortBy {
   selector: 'product-feedback-app-suggestions',
   templateUrl: './suggestions.component.html',
   styleUrls: ['./suggestions.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SuggestionsComponent implements OnInit {
   allSuggestions$ = this.suggestionsFacade.allSuggestions$;
@@ -93,17 +94,17 @@ export class SuggestionsComponent implements OnInit {
   ngOnInit(): void {
     this.plannedSuggestions$ = this.suggestionsFacade.filterSuggestions$(
       'status',
-      'planned'
+      'Planned'
     );
 
     this.inProgressSuggestions$ = this.suggestionsFacade.filterSuggestions$(
       'status',
-      'in-progress'
+      'In-progress'
     );
 
     this.liveSuggestions$ = this.suggestionsFacade.filterSuggestions$(
       'status',
-      'live'
+      'Live'
     );
   }
 

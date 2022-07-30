@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import {
   Suggestion,
@@ -11,6 +11,7 @@ import { CommentForm } from '../forms/comment-form';
   selector: 'product-feedback-app-suggestion-detail',
   templateUrl: './suggestion-detail.component.html',
   styleUrls: ['./suggestion-detail.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SuggestionDetailComponent implements OnInit {
   selectedSuggestion$ = this.suggestionsFacade.selectedSuggestions$;

@@ -6,6 +6,7 @@ import {
   animate,
 } from '@angular/animations';
 import {
+  ChangeDetectionStrategy,
   Component,
   EventEmitter,
   HostListener,
@@ -20,6 +21,7 @@ import { MenuItem } from '../menu/menu.component';
   selector: 'product-feedback-app-select',
   templateUrl: './select.component.html',
   styleUrls: ['./select.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('arrowRotate', [
       state('up', style({ transform: 'rotate(180deg)' })),

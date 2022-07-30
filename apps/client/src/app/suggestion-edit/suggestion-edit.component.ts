@@ -1,4 +1,9 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Suggestion } from '@product-feedback-app/api-interfaces';
 import { SuggestionsFacade } from '@product-feedback-app/core-data';
@@ -10,6 +15,7 @@ import { MenuItem } from '../shared/menu/menu.component';
   selector: 'product-feedback-app-suggestion-edit',
   templateUrl: './suggestion-edit.component.html',
   styleUrls: ['./suggestion-edit.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SuggestionEditComponent implements OnInit, OnDestroy {
   editMode = false;
