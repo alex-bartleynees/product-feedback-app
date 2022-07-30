@@ -10,7 +10,7 @@
       "title": "Add tags for solutions",
       "category": "enhancement",
       "upvotes": 129,
-      "status": "Planned",
+      "status": "live",
       "description": "Easier to search for solutions based on a specific stack.",
       "comments": [
         {
@@ -38,7 +38,7 @@
       "title": "Add a dark theme option",
       "category": "feature",
       "upvotes": 110,
-      "status": "suggestion",
+      "status": "planned",
       "description": "It would help people with light sensitivities and who prefer dark mode.",
       "comments": [
         {
@@ -86,7 +86,7 @@
       "title": "Q&A within the challenge hubs",
       "category": "feature",
       "upvotes": 65,
-      "status": "suggestion",
+      "status": "planned",
       "description": "Challenge-specific Q&A would make for easy reference.",
       "comments": [
         {
@@ -105,7 +105,7 @@
       "title": "Add image/video upload to feedback",
       "category": "enhancement",
       "upvotes": 51,
-      "status": "suggestion",
+      "status": "live",
       "description": "Images and screencasts can enhance comments on solutions.",
       "comments": [
         {
@@ -180,7 +180,7 @@
       "title": "More comprehensive reports please",
       "category": "feature",
       "upvotes": 130,
-      "status": "In-Progress",
+      "status": "live",
       "description": "It would be great to see a more detailed breakdown of solutions.",
       "comments": [
         {
@@ -257,7 +257,7 @@
       "title": "One-click portfolio generation",
       "category": "feature",
       "upvotes": 62,
-      "status": "Live",
+      "status": "in-progress",
       "description": "Add ability to create professional looking portfolio from profile.",
       "comments": [
         {
@@ -303,7 +303,7 @@
       "title": "Add micro-interactions",
       "category": "enhancement",
       "upvotes": 71,
-      "status": "Planned",
+      "status": "live",
       "description": "Small animations at specific points can add delight.",
       "comments": [
         {
@@ -358,22 +358,103 @@
       "id": 13
     },
     {
+      "id": 14,
       "title": "test",
       "category": "Feature",
       "upvotes": 0,
-      "status": "",
+      "status": "planned",
       "description": "test",
-      "comments": [],
-      "id": 14
+      "comments": []
     },
     {
+      "id": 15,
       "title": "Test2",
       "category": "UI",
       "upvotes": 0,
-      "status": "",
+      "status": "planned",
       "description": "test23",
-      "comments": [],
-      "id": 15
+      "comments": []
+    },
+    {
+      "id": 16,
+      "title": "test55",
+      "category": "UI",
+      "upvotes": 0,
+      "status": "in-progress",
+      "description": "5est",
+      "comments": []
+    },
+    {
+      "id": 17,
+      "title": "test656",
+      "category": "UI",
+      "upvotes": 0,
+      "status": "in-progress",
+      "description": "test333",
+      "comments": []
+    },
+    {
+      "id": 18,
+      "title": "test777",
+      "category": "Bug",
+      "upvotes": 0,
+      "status": "in-progress",
+      "description": "fjhfj",
+      "comments": []
+    },
+    {
+      "id": 19,
+      "title": "wopw!!",
+      "category": "Bug",
+      "upvotes": 0,
+      "status": "planned",
+      "description": "dfgdfg",
+      "comments": []
+    },
+    {
+      "id": 20,
+      "title": "fgdg",
+      "category": "UI",
+      "upvotes": 0,
+      "status": "planned",
+      "description": "fgddfg",
+      "comments": []
+    },
+    {
+      "id": 21,
+      "title": "fgdfg",
+      "category": "UI",
+      "upvotes": 0,
+      "status": "planned",
+      "description": "dfgfdg",
+      "comments": []
+    },
+    {
+      "id": 22,
+      "title": "fdgfg",
+      "category": "UI",
+      "upvotes": 0,
+      "status": "planned",
+      "description": "fdgfdg",
+      "comments": []
+    },
+    {
+      "id": 23,
+      "title": "fgd",
+      "category": "UI",
+      "upvotes": 0,
+      "status": "live",
+      "description": "fdgg",
+      "comments": []
+    },
+    {
+      "id": 24,
+      "title": "fgd",
+      "category": "UI",
+      "upvotes": 0,
+      "status": "live",
+      "description": "fdgfdg",
+      "comments": []
     }
   ]
 }

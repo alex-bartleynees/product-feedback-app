@@ -100,7 +100,7 @@ export class SuggestionEditComponent implements OnInit, OnDestroy {
         title: this.suggestionForm.title.value,
         category: this.suggestionForm.category.value,
         upvotes: this.selectedSuggestion?.upvotes,
-        status: this.suggestionForm.statusControl.value,
+        status: this.suggestionForm.statusControl.value.toLowerCase(),
         description: this.suggestionForm.description.value,
         comments: this.selectedSuggestion.comments,
       };

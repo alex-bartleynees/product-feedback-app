@@ -1,6 +1,5 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { Suggestion } from '@product-feedback-app/api-interfaces';
-import { pipe } from 'rxjs';
 import {
   SUGGESTIONS_FEATURE_KEY,
   SuggestionsState,

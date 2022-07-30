@@ -92,19 +92,23 @@ export class SuggestionsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.filterSuggestionsByStatus();
+  }
+
+  filterSuggestionsByStatus(): void {
     this.plannedSuggestions$ = this.suggestionsFacade.filterSuggestions$(
       'status',
-      'Planned'
+      'planned'
     );
 
     this.inProgressSuggestions$ = this.suggestionsFacade.filterSuggestions$(
       'status',
-      'In-progress'
+      'in-progress'
     );
 
     this.liveSuggestions$ = this.suggestionsFacade.filterSuggestions$(
       'status',
-      'Live'
+      'live'
     );
   }
 
