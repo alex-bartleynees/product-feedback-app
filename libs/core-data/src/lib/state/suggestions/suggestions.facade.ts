@@ -20,7 +20,6 @@ export class SuggestionsFacade {
     filter(
       (action: Action) =>
         action.type === SuggestionsActions.createSuggestion.type ||
-        action.type === SuggestionsActions.updateSuggestion.type ||
         action.type === SuggestionsActions.deleteSuggestion.type
     )
   );

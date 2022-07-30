@@ -7,7 +7,7 @@
   "suggestions": [
     {
       "id": 1,
-      "title": "Add tags for solutions",
+      "title": "Add tags for solutions okay?",
       "category": "enhancement",
       "upvotes": 129,
       "status": "live",
@@ -179,8 +179,8 @@
       "id": 7,
       "title": "More comprehensive reports please",
       "category": "feature",
-      "upvotes": 130,
-      "status": "live",
+      "upvotes": 143,
+      "status": "planned",
       "description": "It would be great to see a more detailed breakdown of solutions.",
       "comments": [
         {
@@ -327,134 +327,6 @@
           ]
         }
       ]
-    },
-    {
-      "title": "This is a great suggestion. ",
-      "category": "Feature",
-      "upvotes": 0,
-      "status": "",
-      "description": "Great!",
-      "comments": [
-        {
-          "content": "Great!",
-          "user": {
-            "image": "../../assets/user-images/image-zena.jpg",
-            "name": "John Doe",
-            "username": "johndoe"
-          },
-          "replies": [
-            {
-              "content": "Test",
-              "replyingTo": "johndoe",
-              "user": {
-                "image": "../../assets/user-images/image-zena.jpg",
-                "name": "Jane Doe",
-                "username": "janedoe"
-              }
-            }
-          ]
-        }
-      ],
-      "id": 13
-    },
-    {
-      "id": 14,
-      "title": "test",
-      "category": "Feature",
-      "upvotes": 0,
-      "status": "planned",
-      "description": "test",
-      "comments": []
-    },
-    {
-      "id": 15,
-      "title": "Test2",
-      "category": "UI",
-      "upvotes": 0,
-      "status": "planned",
-      "description": "test23",
-      "comments": []
-    },
-    {
-      "id": 16,
-      "title": "test55",
-      "category": "UI",
-      "upvotes": 0,
-      "status": "in-progress",
-      "description": "5est",
-      "comments": []
-    },
-    {
-      "id": 17,
-      "title": "test656",
-      "category": "UI",
-      "upvotes": 0,
-      "status": "in-progress",
-      "description": "test333",
-      "comments": []
-    },
-    {
-      "id": 18,
-      "title": "test777",
-      "category": "Bug",
-      "upvotes": 0,
-      "status": "in-progress",
-      "description": "fjhfj",
-      "comments": []
-    },
-    {
-      "id": 19,
-      "title": "wopw!!",
-      "category": "Bug",
-      "upvotes": 0,
-      "status": "planned",
-      "description": "dfgdfg",
-      "comments": []
-    },
-    {
-      "id": 20,
-      "title": "fgdg",
-      "category": "UI",
-      "upvotes": 0,
-      "status": "planned",
-      "description": "fgddfg",
-      "comments": []
-    },
-    {
-      "id": 21,
-      "title": "fgdfg",
-      "category": "UI",
-      "upvotes": 0,
-      "status": "planned",
-      "description": "dfgfdg",
-      "comments": []
-    },
-    {
-      "id": 22,
-      "title": "fdgfg",
-      "category": "UI",
-      "upvotes": 0,
-      "status": "planned",
-      "description": "fdgfdg",
-      "comments": []
-    },
-    {
-      "id": 23,
-      "title": "fgd",
-      "category": "UI",
-      "upvotes": 0,
-      "status": "live",
-      "description": "fdgg",
-      "comments": []
-    },
-    {
-      "id": 24,
-      "title": "fgd",
-      "category": "UI",
-      "upvotes": 0,
-      "status": "live",
-      "description": "fdgfdg",
-      "comments": []
     }
   ]
 }
