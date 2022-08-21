@@ -28,33 +28,42 @@ export class SuggestionEditComponent implements OnInit, OnDestroy {
   menuItems: MenuItem[] = [
     {
       title: 'Feature',
+      field: 'feature',
     },
     {
       title: 'UI',
+      field: 'ui',
     },
     {
       title: 'UX',
+      field: 'ux',
     },
     {
       title: 'Enhancement',
+      field: 'enhancement',
     },
     {
       title: 'Bug',
+      field: 'bug',
     },
   ];
 
   statusItems: MenuItem[] = [
     {
       title: 'Suggestion',
+      field: 'suggestion',
     },
     {
       title: 'Planned',
+      field: 'planned',
     },
     {
       title: 'In-Progress',
+      field: 'in-progress',
     },
     {
       title: 'Live',
+      field: 'live',
     },
   ];
 
@@ -100,7 +109,7 @@ export class SuggestionEditComponent implements OnInit, OnDestroy {
         title: this.suggestionForm.title.value,
         category: this.suggestionForm.category.value,
         upvotes: this.selectedSuggestion?.upvotes,
-        status: this.suggestionForm.statusControl.value.toLowerCase(),
+        status: this.suggestionForm.statusControl.value,
         description: this.suggestionForm.description.value,
         comments: this.selectedSuggestion.comments,
       };

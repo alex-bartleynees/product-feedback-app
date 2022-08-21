@@ -327,6 +327,51 @@
           ]
         }
       ]
+    },
+    {
+      "id": 13,
+      "title": "UI test",
+      "category": "ui",
+      "upvotes": 0,
+      "status": "live",
+      "description": "test",
+      "comments": []
+    },
+    {
+      "id": 14,
+      "title": "UX test",
+      "category": "ux",
+      "upvotes": 0,
+      "status": "in-progress",
+      "description": "test",
+      "comments": []
+    },
+    {
+      "title": "Enhancement test",
+      "category": "enhancement",
+      "upvotes": 0,
+      "status": "",
+      "description": "test",
+      "comments": [],
+      "id": 15
+    },
+    {
+      "title": "Bug test",
+      "category": "bug",
+      "upvotes": 0,
+      "status": "",
+      "description": "bug test",
+      "comments": [],
+      "id": 16
+    },
+    {
+      "id": 17,
+      "title": "Feature test",
+      "category": "feature",
+      "upvotes": 0,
+      "status": "planned",
+      "description": "test",
+      "comments": []
     }
   ]
 }

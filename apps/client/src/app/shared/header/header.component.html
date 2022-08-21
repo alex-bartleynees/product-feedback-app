@@ -2,10 +2,8 @@
   <div class="header__content">
     <img src="../../assets/icon-suggestions.svg" alt="suggestion icon" />
     <h2>{{ numberOfSuggestions ?? 0 }} Suggestions</h2>
-    <div class="header__sort">
-      <p class="body-2" (click)="openMenu.emit()">
-        Sort by: {{ menuItemSelected?.title }}
-      </p>
+    <div class="header__sort" (click)="openMenu.emit()">
+      <p class="body-2">Sort by: {{ menuItemSelected?.title }}</p>
       <img
         *ngIf="menuItemSelected?.sortBy?.order === 'desc'"
         src="../../assets/icon-arrow-up.svg"

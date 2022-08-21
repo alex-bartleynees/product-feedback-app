@@ -9,6 +9,7 @@ import { SortBy } from '../../suggestions/suggestions.component';
 
 export interface MenuItem {
   title: string;
+  field?: string;
   sortBy?: SortBy;
 }
 

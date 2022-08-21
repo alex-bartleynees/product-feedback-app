@@ -63,6 +63,6 @@ export class SelectComponent implements OnInit {
   onMenuItemClick(menuItem: MenuItem) {
     this.menuItemSelected = menuItem;
     this.isMenuOpen = false;
-    this.suggestionForm.controls[this.control].setValue(menuItem.title);
+    this.suggestionForm.controls[this.control].setValue(menuItem?.field);
   }
 }
