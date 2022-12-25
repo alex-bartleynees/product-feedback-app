@@ -9,7 +9,8 @@
   height: 30px;
   color: #4661e6;
   cursor: pointer;
-  flex-direction: column;
+  flex-direction: var(--flex-direction, column);
+  gap: var(--gap, 0);
 }
 
 .chip__container--arrow {

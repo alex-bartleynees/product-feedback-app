@@ -1,0 +1,28 @@
+<div class="card__container" *ngIf="suggestion">
+  <div class="card__status">
+    <p>{{ suggestion.status | titlecase }}</p>
+  </div>
+
+  <a class="card__heading" routerLink="/suggestion-detail/{{ suggestion.id }}"
+    ><h3>{{ suggestion.title }}</h3></a
+  >
+  <p class="card__content">{{ suggestion.description }}</p>
+
+  <product-feedback-app-chip
+    class="category-chip"
+    [text]="suggestion.category"
+  ></product-feedback-app-chip>
+
+  <div class="card__bottom-row">
+    <product-feedback-app-chip
+      class="upvote-chip"
+      [text]="suggestion.upvotes"
+      [showArrow]="true"
+      (chipClick)="handleUpVoteClick(suggestion)"
+    ></product-feedback-app-chip>
+
+    <product-feedback-app-comment-icon
+      [numberOfComments]="suggestion.comments?.length ?? 0"
+    ></product-feedback-app-comment-icon>
+  </div>
+</div>

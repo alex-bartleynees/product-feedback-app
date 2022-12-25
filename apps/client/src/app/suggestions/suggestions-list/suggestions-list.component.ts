@@ -5,6 +5,7 @@ import {
   Input,
   Output,
 } from '@angular/core';
+import { Router } from '@angular/router';
 import { Suggestion } from '@product-feedback-app/api-interfaces';
 import { Observable } from 'rxjs';
 import { SortBy } from '../suggestions.component';
@@ -23,7 +24,9 @@ export class SuggestionsListComponent {
   @Output() suggestionSelectClick = new EventEmitter<Suggestion>();
   @Output() addFeedbackButtonClick = new EventEmitter<void>();
 
+  constructor(private router: Router) {}
+
   onButtonClick() {
-    this.addFeedbackButtonClick.emit();
+    this.router.navigate(['/suggestion']);
   }
 }

@@ -91,7 +91,7 @@ export class SuggestionDetailComponent implements OnInit {
     }
     return {
       ...suggestion,
-      comments: suggestion.comments.map((comment) => {
+      comments: suggestion.comments?.map((comment) => {
         if (comment.user.username === newComment.user.username) {
           return newComment;
         }

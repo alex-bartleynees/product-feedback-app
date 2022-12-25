@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Suggestion } from '@product-feedback-app/api-interfaces';
 import { SuggestionsFacade } from '@product-feedback-app/core-data';
@@ -21,11 +21,20 @@ export interface SortBy {
   styleUrls: ['./suggestions.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SuggestionsComponent implements OnInit {
+export class SuggestionsComponent {
   allSuggestions$ = this.suggestionsFacade.allSuggestions$;
-  plannedSuggestions$?: Observable<Suggestion[]>;
-  inProgressSuggestions$?: Observable<Suggestion[]>;
-  liveSuggestions$?: Observable<Suggestion[]>;
+  plannedSuggestions$ = this.suggestionsFacade.filterSuggestions$(
+    'status',
+    'planned'
+  );
+  inProgressSuggestions$ = this.suggestionsFacade.filterSuggestions$(
+    'status',
+    'in-progress'
+  );
+  liveSuggestions$ = this.suggestionsFacade.filterSuggestions$(
+    'status',
+    'live'
+  );
   isMenuOpen = false;
   sortBy: SortBy = { key: 'upvotes', order: 'desc' };
   chipList: Chip[] = [
@@ -91,27 +100,6 @@ export class SuggestionsComponent implements OnInit {
     private router: Router
   ) {}
 
-  ngOnInit(): void {
-    this.filterSuggestionsByStatus();
-  }
-
-  filterSuggestionsByStatus(): void {
-    this.plannedSuggestions$ = this.suggestionsFacade.filterSuggestions$(
-      'status',
-      'planned'
-    );
-
-    this.inProgressSuggestions$ = this.suggestionsFacade.filterSuggestions$(
-      'status',
-      'in-progress'
-    );
-
-    this.liveSuggestions$ = this.suggestionsFacade.filterSuggestions$(
-      'status',
-      'live'
-    );
-  }
-
   onChipClick(chipList: Chip[], chip: Chip): void {
     if (chip.text === 'All') {
       this.allSuggestions$ = this.suggestionsFacade.allSuggestions$;
@@ -153,9 +141,5 @@ export class SuggestionsComponent implements OnInit {
     }
     this.suggestionsFacade.selectSuggestion(suggestion.id);
     this.router.navigate(['/suggestion-detail', suggestion.id]);
-  }
-
-  onAddFeedbackButtonClick(): void {
-    this.router.navigate(['/suggestion']);
   }
 }

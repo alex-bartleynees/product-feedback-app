@@ -1,8 +1,6 @@
 <div class="navigation__buttons">
-  <button class="button__back" (click)="onBackButtonClick()">
-    <img src="../../assets/icon-arrow-left.svg" alt="back icon" />
-    <h4 class="heading">Go Back</h4>
-  </button>
+  <product-feedback-app-back-button>
+  </product-feedback-app-back-button>
   <product-feedback-app-button
     [style]="'secondary'"
     (click)="onEditFeedbackClick()"

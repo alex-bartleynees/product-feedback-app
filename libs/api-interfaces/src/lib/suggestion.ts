@@ -7,5 +7,5 @@ export interface Suggestion {
   upvotes: number;
   status: string;
   description: string;
-  comments: SuggestionComment[];
+  comments?: SuggestionComment[];
 }

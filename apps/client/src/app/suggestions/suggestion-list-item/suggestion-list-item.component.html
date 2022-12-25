@@ -17,11 +17,9 @@
       [text]="suggestion.category"
     ></product-feedback-app-chip>
   </div>
-  <div
+  <product-feedback-app-comment-icon
     class="comment__icon"
-    *ngIf="suggestion.comments && suggestion.comments.length > 0"
+    [numberOfComments]="suggestion.comments?.length ?? 0"
   >
-    <img src="../../assets/icon-comments.svg" alt="comment icon" />
-    {{ suggestion.comments.length }}
-  </div>
+  </product-feedback-app-comment-icon>
 </div>

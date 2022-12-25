@@ -18,5 +18,4 @@ export class ChipComponent {
   @Input() showArrow = false;
 
   @Output() chipClick = new EventEmitter<string | number>();
-  @Output() upVoteClick = new EventEmitter();
 }

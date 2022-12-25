@@ -131,10 +131,6 @@ export class SuggestionEditComponent implements OnInit, OnDestroy {
     this.router.navigate(['/']);
   }
 
-  onBackButtonClick() {
-    this.router.navigate(['/']);
-  }
-
   onCancelButtonClick(event: Event) {
     event.preventDefault();
     this.router.navigate(['/']);

@@ -9,7 +9,7 @@
       "id": 1,
       "title": "Add tags for solutions okay?",
       "category": "enhancement",
-      "upvotes": 129,
+      "upvotes": 142,
       "status": "live",
       "description": "Easier to search for solutions based on a specific stack.",
       "comments": [
@@ -37,7 +37,7 @@
       "id": 2,
       "title": "Add a dark theme option",
       "category": "feature",
-      "upvotes": 110,
+      "upvotes": 120,
       "status": "planned",
       "description": "It would help people with light sensitivities and who prefer dark mode.",
       "comments": [
@@ -85,7 +85,7 @@
       "id": 3,
       "title": "Q&A within the challenge hubs",
       "category": "feature",
-      "upvotes": 65,
+      "upvotes": 67,
       "status": "planned",
       "description": "Challenge-specific Q&A would make for easy reference.",
       "comments": [
@@ -179,7 +179,7 @@
       "id": 7,
       "title": "More comprehensive reports please",
       "category": "feature",
-      "upvotes": 143,
+      "upvotes": 178,
       "status": "planned",
       "description": "It would be great to see a more detailed breakdown of solutions.",
       "comments": [
@@ -215,6 +215,24 @@
             {
               "content": "test",
               "replyingTo": "countryspirit",
+              "user": {
+                "image": "../../assets/user-images/image-zena.jpg",
+                "name": "Jane Doe",
+                "username": "janedoe"
+              }
+            },
+            {
+              "content": "Great!\n",
+              "replyingTo": "countryspirit",
+              "user": {
+                "image": "../../assets/user-images/image-zena.jpg",
+                "name": "Jane Doe",
+                "username": "janedoe"
+              }
+            },
+            {
+              "content": "Wow!",
+              "replyingTo": "janedoe",
               "user": {
                 "image": "../../assets/user-images/image-zena.jpg",
                 "name": "Jane Doe",
@@ -256,7 +274,7 @@
       "id": 9,
       "title": "One-click portfolio generation",
       "category": "feature",
-      "upvotes": 62,
+      "upvotes": 68,
       "status": "in-progress",
       "description": "Add ability to create professional looking portfolio from profile.",
       "comments": [
@@ -302,7 +320,7 @@
       "id": 12,
       "title": "Add micro-interactions",
       "category": "enhancement",
-      "upvotes": 71,
+      "upvotes": 82,
       "status": "live",
       "description": "Small animations at specific points can add delight.",
       "comments": [
@@ -332,7 +350,7 @@
       "id": 13,
       "title": "UI test",
       "category": "ui",
-      "upvotes": 0,
+      "upvotes": 2,
       "status": "live",
       "description": "test",
       "comments": []
@@ -341,10 +359,30 @@
       "id": 14,
       "title": "UX test",
       "category": "ux",
-      "upvotes": 0,
+      "upvotes": 11,
       "status": "in-progress",
       "description": "test",
-      "comments": []
+      "comments": [
+        {
+          "content": "This is a great test comment. How are you today?",
+          "user": {
+            "image": "../../assets/user-images/image-zena.jpg",
+            "name": "John Doe",
+            "username": "johndoe"
+          },
+          "replies": [
+            {
+              "content": "I'm great thanks!",
+              "replyingTo": "johndoe",
+              "user": {
+                "image": "../../assets/user-images/image-zena.jpg",
+                "name": "Jane Doe",
+                "username": "janedoe"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "title": "Enhancement test",
@@ -368,10 +406,66 @@
       "id": 17,
       "title": "Feature test",
       "category": "feature",
-      "upvotes": 0,
+      "upvotes": 6,
       "status": "planned",
       "description": "test",
       "comments": []
+    },
+    {
+      "title": "Wow!",
+      "category": "enhancement",
+      "upvotes": 0,
+      "status": "",
+      "description": "Wow, this is great! Congrats!",
+      "comments": [
+        {
+          "content": "Thanks bro I agree!",
+          "user": {
+            "image": "../../assets/user-images/image-zena.jpg",
+            "name": "John Doe",
+            "username": "johndoe"
+          },
+          "replies": [
+            {
+              "content": "I love you!",
+              "replyingTo": "johndoe",
+              "user": {
+                "image": "../../assets/user-images/image-zena.jpg",
+                "name": "Jane Doe",
+                "username": "janedoe"
+              }
+            }
+          ]
+        }
+      ],
+      "id": 18
+    },
+    {
+      "title": "More comprehensive reports please",
+      "category": "feature",
+      "upvotes": 0,
+      "status": "",
+      "description": "Test test test",
+      "comments": [],
+      "id": 19
+    },
+    {
+      "title": "new test",
+      "category": "ui",
+      "upvotes": 1,
+      "status": "",
+      "description": "test",
+      "comments": [],
+      "id": 20
+    },
+    {
+      "title": "Test test test",
+      "category": "ux",
+      "upvotes": 0,
+      "status": "",
+      "description": "test",
+      "comments": [],
+      "id": 21
     }
   ]
 }

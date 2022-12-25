@@ -9,9 +9,12 @@ import { MenuComponent } from './menu/menu.component';
 import { SortPipe } from './pipes/sort.pipe';
 import { TileComponent } from './tile/tile.component';
 import { SelectComponent } from './select/select.component';
+import { BackButtonComponent } from './back-button/back-button.component';
+import { RouterModule } from '@angular/router';
+import { CommentIconComponent } from './comment-icon/comment-icon.component';
 
 @NgModule({
-  imports: [CommonModule, ReactiveFormsModule, FormsModule],
+  imports: [CommonModule, ReactiveFormsModule, FormsModule, RouterModule],
   declarations: [
     ButtonComponent,
     ChipComponent,
@@ -21,6 +24,8 @@ import { SelectComponent } from './select/select.component';
     MenuComponent,
     SuggestionListItemComponent,
     SelectComponent,
+    BackButtonComponent,
+    CommentIconComponent,
   ],
   exports: [
     ButtonComponent,
@@ -34,6 +39,8 @@ import { SelectComponent } from './select/select.component';
     ReactiveFormsModule,
     FormsModule,
     SelectComponent,
+    BackButtonComponent,
+    CommentIconComponent,
   ],
 })
 export class SharedModule {}

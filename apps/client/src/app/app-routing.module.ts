@@ -23,6 +23,11 @@ const routes: Routes = [
         (m) => m.SuggestionEditModule
       ),
   },
+  {
+    path: 'road-map',
+    loadChildren: () =>
+      import('./road-map/road-map.module').then((m) => m.RoadMapModule),
+  },
 ];
 
 @NgModule({

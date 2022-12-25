@@ -5,6 +5,7 @@ import {
   Input,
   Output,
 } from '@angular/core';
+import { Router } from '@angular/router';
 import { MenuItem } from '../menu/menu.component';
 
 @Component({
@@ -19,7 +20,9 @@ export class HeaderComponent {
   @Output() openMenu = new EventEmitter();
   @Output() addFeedbackButtonClick = new EventEmitter<void>();
 
+  constructor(private router: Router) {}
+
   onAddFeedbackButtonClick() {
-    this.addFeedbackButtonClick.emit();
+    this.router.navigate(['/suggestion']);
   }
 }

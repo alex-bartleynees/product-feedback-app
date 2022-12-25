@@ -14,19 +14,6 @@
   gap: 2rem;
 }
 
-.header__sort {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  cursor: pointer;
-
-  img {
-    transform: scale(1.2);
-    filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(279deg)
-      brightness(104%) contrast(101%);
-  }
-}
-
 .header__button {
   margin-left: auto;
 }

@@ -1,0 +1,34 @@
+.heading__container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+}
+
+product-feedback-app-back-button {
+    --button-color: var(--background-color);
+}
+
+.grid__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-block-start: 3rem;
+    gap: 1rem;
+}
+
+.roadmap__heading {
+    color: #3A4374
+
+}
+
+.roadmap__subtitle {
+    color: #647196;
+}
+
+.inprogress-cards {
+    --status-color: #AD1FEA;
+}
+
+.live-cards {
+    --status-color: #62BCFA;
+}
