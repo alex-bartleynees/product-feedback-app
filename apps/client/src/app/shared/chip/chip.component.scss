@@ -8,13 +8,13 @@
   min-width: 56px;
   height: 30px;
   color: #4661e6;
-  cursor: pointer;
   flex-direction: var(--flex-direction, column);
   gap: var(--gap, 0);
 }
 
 .chip__container--arrow {
   height: 40px;
+  cursor: pointer;
 }
 
 .chip__container:hover {
