@@ -69,12 +69,29 @@
 
 .suggestion-buttons {
   display: flex;
+
+  @media (max-width: 700px) {
+    display: grid;
+    gap: 0.5rem;
+    width: 100%;
+  }
+}
+
+.button__feedback {
+  @media (max-width: 700px) {
+    grid-row: 1;
+  }
 }
 
 .buttons__right {
   margin-left: auto;
   display: flex;
   gap: 1rem;
+
+  @media (max-width: 700px) {
+    display: grid;
+    width: 100%;
+  }
 }
 
 input,
@@ -108,4 +125,8 @@ product-feedback-app-button {
 .button__delete {
   --button-background: #d73737;
   --button-hover-color: #e98888;
+
+  @media (max-width: 700px) {
+    grid-row: 3;
+  }
 }

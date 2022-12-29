@@ -9,6 +9,11 @@
   cursor: pointer;
   font-weight: bold;
   font-size: 14px;
+  width: 100%;
+
+  @media (max-width: 420px) {
+    padding: 0.7rem 1rem;
+  }
 }
 
 .button--secondary {

@@ -9,7 +9,7 @@
       "id": 1,
       "title": "Add tags for solutions okay?",
       "category": "enhancement",
-      "upvotes": 142,
+      "upvotes": 144,
       "status": "live",
       "description": "Easier to search for solutions based on a specific stack.",
       "comments": [
@@ -37,7 +37,7 @@
       "id": 2,
       "title": "Add a dark theme option",
       "category": "feature",
-      "upvotes": 120,
+      "upvotes": 122,
       "status": "planned",
       "description": "It would help people with light sensitivities and who prefer dark mode.",
       "comments": [
@@ -177,9 +177,9 @@
     },
     {
       "id": 7,
-      "title": "More comprehensive reports please",
+      "title": "More comprehensive reports please test",
       "category": "feature",
-      "upvotes": 178,
+      "upvotes": 181,
       "status": "planned",
       "description": "It would be great to see a more detailed breakdown of solutions.",
       "comments": [
@@ -274,7 +274,7 @@
       "id": 9,
       "title": "One-click portfolio generation",
       "category": "feature",
-      "upvotes": 68,
+      "upvotes": 72,
       "status": "in-progress",
       "description": "Add ability to create professional looking portfolio from profile.",
       "comments": [
@@ -312,7 +312,7 @@
       "id": 11,
       "title": "Animated solution screenshots",
       "category": "bug",
-      "upvotes": 9,
+      "upvotes": 22,
       "status": "in-progress",
       "description": "Screenshots of solutions with animations don’t display correctly."
     },
@@ -350,7 +350,7 @@
       "id": 13,
       "title": "UI test",
       "category": "ui",
-      "upvotes": 2,
+      "upvotes": 6,
       "status": "live",
       "description": "test",
       "comments": []
@@ -359,7 +359,7 @@
       "id": 14,
       "title": "UX test",
       "category": "ux",
-      "upvotes": 11,
+      "upvotes": 24,
       "status": "in-progress",
       "description": "test",
       "comments": [

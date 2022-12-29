@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { SuggestionsFacade } from '@product-feedback-app/core-data';
 
 @Component({
@@ -7,7 +7,7 @@ import { SuggestionsFacade } from '@product-feedback-app/core-data';
   styleUrls: ['./road-map.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class RoadMapComponent implements OnInit {
+export class RoadMapComponent {
   plannedSuggestions$ = this.suggestionsFacade.filterSuggestions$(
     'status',
     'planned'
@@ -24,8 +24,4 @@ export class RoadMapComponent implements OnInit {
   );
 
   constructor(private suggestionsFacade: SuggestionsFacade) {}
-
-  ngOnInit(): void {
-    this.plannedSuggestions$.subscribe((result) => console.log(result));
-  }
 }

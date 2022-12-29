@@ -8,10 +8,17 @@
   flex-direction: column;
   gap: 2rem;
   padding: 8rem;
+
+  @media (max-width: 700px) {
+    margin-inline: 2rem;
+    margin-block: 3rem;
+    padding: 2rem;
+  }
 }
 
 .suggestion-list__heading {
   color: #3a4374;
+  text-align: center;
 }
 
 .suggestion-list__text {
@@ -28,4 +35,8 @@
     transform: scale(2);
     margin-top: 0.2rem;
   }
+}
+
+product-feedback-app-suggestion-list-item {
+  --margin-inline-mobile: 1rem;
 }

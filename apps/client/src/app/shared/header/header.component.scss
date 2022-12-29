@@ -5,12 +5,20 @@
   background-color: #373f68;
   border-radius: 10px;
   color: var(--background-color);
+
+  @media (max-width: 730px) {
+    padding: 1rem;
+  }
+
+  @media (max-width: 700px) {
+    border-radius: 0;
+  }
 }
 
 .header__content {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 2rem;
 }
 

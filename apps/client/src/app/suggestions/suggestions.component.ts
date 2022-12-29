@@ -1,8 +1,14 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnDestroy,
+  OnInit,
+  Renderer2,
+} from '@angular/core';
 import { Router } from '@angular/router';
 import { Suggestion } from '@product-feedback-app/api-interfaces';
 import { SuggestionsFacade } from '@product-feedback-app/core-data';
-import { Observable } from 'rxjs';
+import { debounceTime, fromEvent, map, Observable, startWith } from 'rxjs';
 import { MenuItem } from '../shared/menu/menu.component';
 
 export interface Chip {
@@ -21,7 +27,7 @@ export interface SortBy {
   styleUrls: ['./suggestions.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SuggestionsComponent {
+export class SuggestionsComponent implements OnInit, OnDestroy {
   allSuggestions$ = this.suggestionsFacade.allSuggestions$;
   plannedSuggestions$ = this.suggestionsFacade.filterSuggestions$(
     'status',
@@ -94,11 +100,21 @@ export class SuggestionsComponent {
     },
   ];
   menuItemSelected: MenuItem = this.menuItems[0];
+  resizeObs$ = fromEvent(window, 'resize').pipe(
+    debounceTime(500),
+    map(this.checkScreenSize),
+    startWith(this.checkScreenSize())
+  );
 
   constructor(
     private suggestionsFacade: SuggestionsFacade,
-    private router: Router
+    private router: Router,
+    private renderer: Renderer2
   ) {}
+
+  ngOnInit(): void {
+    this.renderer.addClass(document.body, 'suggestions');
+  }
 
   onChipClick(chipList: Chip[], chip: Chip): void {
     if (chip.text === 'All') {
@@ -141,5 +157,13 @@ export class SuggestionsComponent {
     }
     this.suggestionsFacade.selectSuggestion(suggestion.id);
     this.router.navigate(['/suggestion-detail', suggestion.id]);
+  }
+
+  checkScreenSize() {
+    return document.body.offsetWidth > 700;
+  }
+
+  ngOnDestroy(): void {
+    this.renderer.removeClass(document.body, 'suggestions');
   }
 }

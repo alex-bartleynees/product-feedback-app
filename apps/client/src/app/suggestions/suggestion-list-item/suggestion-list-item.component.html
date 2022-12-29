@@ -1,8 +1,10 @@
 <div class="suggestion-item__container" *ngIf="suggestion">
   <product-feedback-app-chip
+    class="chip__upvote"
     [text]="suggestion.upvotes"
     (chipClick)="upVoteClick.emit(suggestion)"
     [showArrow]="true"
+    [usePointer]="false"
   ></product-feedback-app-chip>
   <div
     class="suggestion-item__content"

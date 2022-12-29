@@ -100,9 +100,9 @@
           >
             Cancel</product-feedback-app-button
           >
-          <product-feedback-app-button
-            >Add Feedback</product-feedback-app-button
-          >
+          <product-feedback-app-button class="button__feedback">{{
+            editMode ? 'Save Changes' : 'Add Feedback'
+          }}</product-feedback-app-button>
         </div>
       </div>
     </form>

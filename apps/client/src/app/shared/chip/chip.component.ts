@@ -16,6 +16,7 @@ export class ChipComponent {
   @Input() text: string | number = '';
   @Input() active = false;
   @Input() showArrow = false;
+  @Input() usePointer = true;
 
   @Output() chipClick = new EventEmitter<string | number>();
 }
