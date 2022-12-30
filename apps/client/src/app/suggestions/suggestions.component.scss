@@ -30,22 +30,6 @@
   grid-area: content;
 }
 
-.heading__container {
-  color: var(--background-color);
-  margin-top: 2.5rem;
-
-  @media (max-width: 700px) {
-    margin-top: 0.5rem;
-  }
-}
-
-.chip__container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  height: 140px;
-}
-
 .roadmap__container {
   height: 140px;
 }

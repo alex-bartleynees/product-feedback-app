@@ -1,0 +1,10 @@
+<product-feedback-app-tile>
+  <div class="chip__container">
+    <product-feedback-app-chip
+      *ngFor="let chip of chipList"
+      [text]="chip.text"
+      [active]="chip.active"
+      (chipClick)="chipSelected.emit({chipList, chip})"
+    ></product-feedback-app-chip>
+  </div>
+</product-feedback-app-tile>

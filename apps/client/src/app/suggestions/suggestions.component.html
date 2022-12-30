@@ -1,24 +1,15 @@
 <div class="page__container">
   <div class="sidebar__container">
-    <product-feedback-app-tile [radial]="true">
-      <div class="heading__container">
-        <h2>Frontend Mentor</h2>
-        <p class="body-2">Feedback Board</p>
-      </div>
-    </product-feedback-app-tile>
+    <product-feedback-app-heading-tile></product-feedback-app-heading-tile>
 
-    <product-feedback-app-tile *ngIf="resizeObs$ | async">
-      <div class="chip__container">
-        <product-feedback-app-chip
-          *ngFor="let chip of chipList"
-          [text]="chip.text"
-          [active]="chip.active"
-          (chipClick)="onChipClick(chipList, chip)"
-        ></product-feedback-app-chip>
-      </div>
-    </product-feedback-app-tile>
+    <product-feedback-app-chiplist-tile
+      *ngIf="resize.resizeObs$ | async"
+      [chipList]="chipList"
+      (chipSelected)="onChipClick($event)"
+    >
+    </product-feedback-app-chiplist-tile>
 
-    <product-feedback-app-tile *ngIf="resizeObs$ | async">
+    <product-feedback-app-tile *ngIf="resize.resizeObs$ | async">
       <div class="roadmap__container">
         <div class="roadmap__heading-container">
           <h3 class="roadmap__heading">Roadmap</h3>
@@ -49,7 +40,7 @@
   </div>
   <main class="content__container">
     <product-feedback-app-header class="header">
-      <ng-container *ngIf="resizeObs$ | async">
+      <ng-container *ngIf="resize.resizeObs$ | async">
         <img src="../../assets/icon-suggestions.svg" alt="suggestion icon" />
         <h2>{{ (allSuggestions$ | async)?.length ?? 0 }} Suggestions</h2>
       </ng-container>

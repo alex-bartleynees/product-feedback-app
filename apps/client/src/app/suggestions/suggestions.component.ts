@@ -10,6 +10,7 @@ import { Suggestion } from '@product-feedback-app/api-interfaces';
 import { SuggestionsFacade } from '@product-feedback-app/core-data';
 import { debounceTime, fromEvent, map, Observable, startWith } from 'rxjs';
 import { MenuItem } from '../shared/menu/menu.component';
+import { ResizeService } from '../shared/resize-service/resize.service';
 
 export interface Chip {
   text: string;
@@ -100,23 +101,21 @@ export class SuggestionsComponent implements OnInit, OnDestroy {
     },
   ];
   menuItemSelected: MenuItem = this.menuItems[0];
-  resizeObs$ = fromEvent(window, 'resize').pipe(
-    debounceTime(500),
-    map(this.checkScreenSize),
-    startWith(this.checkScreenSize())
-  );
 
   constructor(
     private suggestionsFacade: SuggestionsFacade,
     private router: Router,
-    private renderer: Renderer2
+    private renderer: Renderer2,
+    public resize: ResizeService
   ) {}
 
   ngOnInit(): void {
     this.renderer.addClass(document.body, 'suggestions');
   }
 
-  onChipClick(chipList: Chip[], chip: Chip): void {
+  onChipClick(event: { chipList: Chip[]; chip: Chip }): void {
+    const { chipList, chip } = event;
+
     if (chip.text === 'All') {
       this.allSuggestions$ = this.suggestionsFacade.allSuggestions$;
       this.resetChipList(chipList, chip);
@@ -157,10 +156,6 @@ export class SuggestionsComponent implements OnInit, OnDestroy {
     }
     this.suggestionsFacade.selectSuggestion(suggestion.id);
     this.router.navigate(['/suggestion-detail', suggestion.id]);
-  }
-
-  checkScreenSize() {
-    return document.body.offsetWidth > 700;
   }
 
   ngOnDestroy(): void {
