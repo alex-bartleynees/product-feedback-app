@@ -8,7 +8,7 @@ import {
 import { Router } from '@angular/router';
 import { Suggestion } from '@product-feedback-app/api-interfaces';
 import { SuggestionsFacade } from '@product-feedback-app/core-data';
-import { debounceTime, fromEvent, map, Observable, startWith } from 'rxjs';
+import { Observable } from 'rxjs';
 import { MenuItem } from '../shared/menu/menu.component';
 import { ResizeService } from '../shared/resize-service/resize.service';
 

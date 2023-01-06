@@ -19,8 +19,7 @@ export class SuggestionsFacade {
   mutations$ = this.actions$.pipe(
     filter(
       (action: Action) =>
-        action.type === SuggestionsActions.createSuggestion.type ||
-        action.type === SuggestionsActions.deleteSuggestion.type
+        action.type === SuggestionsActions.deleteSuggestionSuccess.type
     )
   );
 

@@ -1,5 +1,6 @@
 import {
   ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   OnDestroy,
   OnInit,
@@ -72,7 +73,8 @@ export class SuggestionEditComponent implements OnInit, OnDestroy {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private suggestionService: SuggestionsFacade
+    private suggestionService: SuggestionsFacade,
+    private changeDetectorRef: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
@@ -90,6 +92,7 @@ export class SuggestionEditComponent implements OnInit, OnDestroy {
           this.selectedSuggestion = suggestion;
           this.editTitle = `Editing '${suggestion?.title}'`;
           this.suggestionForm = new SuggestionForm(suggestion);
+          this.changeDetectorRef.markForCheck();
         });
     }
   }
