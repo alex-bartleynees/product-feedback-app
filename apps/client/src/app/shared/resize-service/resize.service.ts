@@ -12,6 +12,6 @@ export class ResizeService {
   );
 
   checkScreenSize() {
-    return document.body.offsetWidth > 700;
+    return window.innerWidth > 700;
   }
 }
