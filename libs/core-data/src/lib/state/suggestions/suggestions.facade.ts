@@ -9,6 +9,7 @@ import * as SuggestionsSelectors from './suggestions.selectors';
 @Injectable({ providedIn: 'root' })
 export class SuggestionsFacade {
   loaded$ = this.store.pipe(select(SuggestionsSelectors.getSuggestionsLoaded));
+  loadError$ = this.store.pipe(select(SuggestionsSelectors.getSuggestionsError));
   allSuggestions$ = this.store.pipe(
     select(SuggestionsSelectors.getAllSuggestions)
   );
