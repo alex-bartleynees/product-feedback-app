@@ -20,49 +20,34 @@ export class SuggestionCommentComponent {
   @Input() parentComment?: SuggestionComment;
   @Input() replyingTo?: string;
 
-  @Output() newReply = new EventEmitter<SuggestionComment>();
+  @Output() newReply = new EventEmitter<SuggestionReply>();
 
   commentForm = new CommentForm();
   showReply = false;
 
   onCommentReply() {
-    if (!this.comment || !this.commentForm.valid) {
+    if (!this.comment?.id || !this.commentForm.valid) {
       return;
     }
 
     const newReply: SuggestionReply = {
+      suggestionCommentId: this.parentComment?.id
+        ? this.parentComment.id
+        : this.comment.id,
       content: this.commentForm.comment.value,
       replyingTo: this.comment?.user.username,
       user: {
+        id: 7,
         image: '../../assets/user-images/image-zena.jpg',
         name: 'Jane Doe',
         username: 'janedoe',
       },
     };
 
-    let newComment: SuggestionComment;
-
-    if (this.parentComment) {
-      newComment = this.formatComment(this.parentComment, newReply);
-    } else {
-      newComment = this.formatComment(this.comment, newReply);
-    }
-    this.newReply.emit(newComment);
+    this.newReply.emit(newReply);
   }
 
   onNewReply(reply: SuggestionReply) {
     this.newReply.emit(reply);
-  }
-
-  private formatComment(
-    comment: SuggestionComment,
-    newReply: SuggestionComment
-  ): SuggestionComment {
-    const newComment: SuggestionComment = {
-      ...comment,
-      replies: comment.replies ? [...comment.replies, newReply] : [newReply],
-    };
-
-    return newComment;
   }
 }

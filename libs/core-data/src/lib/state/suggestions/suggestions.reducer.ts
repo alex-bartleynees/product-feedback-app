@@ -1,6 +1,10 @@
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 import { createReducer, on, Action } from '@ngrx/store';
-import { Suggestion } from '@product-feedback-app/api-interfaces';
+import {
+  Suggestion,
+  SuggestionComment,
+  SuggestionReply,
+} from '@product-feedback-app/api-interfaces';
 
 import * as SuggestionsActions from './suggestions.actions';
 
@@ -68,7 +72,62 @@ const suggestionsReducer = createReducer(
   on(SuggestionsActions.deleteSuggestionFailure, (state, { error }) => ({
     ...state,
     error,
-  }))
+  })),
+  on(SuggestionsActions.addCommentToSuggestionSuccess, (state, { comment }) => {
+    const suggestion: Suggestion | undefined =
+      state.entities[comment.suggestionId];
+    const comments: SuggestionComment[] | undefined = suggestion?.comments;
+    if (suggestion) {
+      return suggestionsAdapter.updateOne(
+        {
+          id: comment.suggestionId,
+          changes: {
+            ...suggestion,
+            comments: [...(comments ?? []), comment],
+          },
+        },
+        state
+      );
+    }
+
+    return { ...state };
+  }),
+  on(SuggestionsActions.AddCommentToSuggestionFailure, (state, { error }) => ({
+    ...state,
+    error,
+  })),
+  on(SuggestionsActions.createReplySuccess, (state, { reply }) => {
+    const suggestion: Suggestion | undefined =
+      state.entities[reply.suggestionId];
+    const comment = suggestion?.comments?.find(
+      (comment) => comment.id === reply.suggestionCommentId
+    );
+    if (suggestion?.comments && comment) {
+      const updatedReplies: SuggestionReply[] = [
+        ...(comment?.replies ?? []),
+        reply,
+      ];
+      const updatedComment: SuggestionComment = {
+        ...comment,
+        replies: updatedReplies,
+      };
+      const index = suggestion.comments.indexOf(comment);
+      const updatedComments: SuggestionComment[] = [...suggestion.comments];
+      updatedComments[index] = updatedComment;
+      return suggestionsAdapter.updateOne(
+        {
+          id: reply.suggestionId,
+          changes: {
+            ...suggestion,
+            comments: [...updatedComments],
+          },
+        },
+        state
+      );
+    }
+
+    return { ...state };
+  })
 );
 
 export function reducer(state: SuggestionsState | undefined, action: Action) {

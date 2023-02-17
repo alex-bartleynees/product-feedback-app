@@ -3,6 +3,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import {
   Suggestion,
   SuggestionComment,
+  SuggestionCommentReplyRequest,
+  SuggestionCommentRequest,
+  SuggestionReply,
 } from '@product-feedback-app/api-interfaces';
 import { SuggestionsFacade } from '@product-feedback-app/core-data';
 import { CommentForm } from '../forms/comment-form';
@@ -46,36 +49,30 @@ export class SuggestionDetailComponent implements OnInit {
     if (!this.selectedSuggestion || !this.commentForm.valid) {
       return;
     }
-    const comment: SuggestionComment = {
+    const comment: SuggestionCommentRequest = {
+      suggestionId: this.selectedSuggestion.id,
       content: this.commentForm.comment.value,
-      user: {
-        image: '../../assets/user-images/image-zena.jpg',
-        name: 'John Doe',
-        username: 'johndoe',
-      },
+      userId: 7,
     };
 
-    const updatedSuggestion: Suggestion = {
-      ...this.selectedSuggestion,
-      comments: this.selectedSuggestion.comments
-        ? [...this.selectedSuggestion.comments, comment]
-        : [comment],
-    };
-
-    this.suggestionsFacade.updateSuggestion(updatedSuggestion);
+    this.suggestionsFacade.addCommentToSuggestion(comment);
     this.commentForm.comment.setValue('');
   }
 
-  onNewReply(comment: SuggestionComment): void {
-    if (!this.selectedSuggestion) {
+  onNewReply(reply: SuggestionReply): void {
+    if (!this.selectedSuggestion?.id || !reply.user.id) {
       return;
     }
 
-    const updatedSuggestion: Suggestion = this.updateSuggestionWithReply(
-      this.selectedSuggestion,
-      comment
-    );
-    this.suggestionsFacade.updateSuggestion(updatedSuggestion);
+    const suggestionReplyRequest: SuggestionCommentReplyRequest = {
+      suggestionId: this.selectedSuggestion.id,
+      suggestionCommentId: reply.suggestionCommentId,
+      content: reply.content,
+      replyingTo: reply.replyingTo,
+      userId: reply.user.id,
+    };
+    console.log(suggestionReplyRequest);
+    this.suggestionsFacade.addReplyToComment(suggestionReplyRequest);
   }
 
   onEditFeedbackClick(): void {

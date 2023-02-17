@@ -1,6 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { createAction, props } from '@ngrx/store';
-import { Suggestion } from '@product-feedback-app/api-interfaces';
+import {
+  Suggestion,
+  SuggestionCommentReplyResponse,
+  SuggestionCommentRequest,
+  SuggestionCommentResponse,
+} from '@product-feedback-app/api-interfaces';
 
 export const loadSuggestions = createAction('[Suggestions] Load Suggestions');
 
@@ -34,6 +39,21 @@ export const updateSuggestionFailure = createAction(
   props<{ error: any }>()
 );
 
+export const addCommentToSuggestion = createAction(
+  '[Suggestions] Add Comment',
+  props<{ comment: SuggestionCommentRequest }>()
+);
+
+export const addCommentToSuggestionSuccess = createAction(
+  '[Suggestions] Add Comment Success',
+  props<{ comment: SuggestionCommentResponse }>()
+);
+
+export const AddCommentToSuggestionFailure = createAction(
+  '[Suggestions] Add Comment Failure',
+  props<{ error: any }>()
+);
+
 export const createSuggestion = createAction(
   '[Suggestions] Create Suggestion',
   props<{ suggestion: Suggestion }>()
@@ -46,6 +66,21 @@ export const createSuggestionSuccess = createAction(
 
 export const createSuggestionFailure = createAction(
   '[Suggestions] Create Suggestion Failure',
+  props<{ error: any }>()
+);
+
+export const createCommentReply = createAction(
+  '[Suggestions] Create Reply',
+  props<{ reply: SuggestionCommentRequest }>()
+);
+
+export const createReplySuccess = createAction(
+  '[Suggestions] Create Reply Success',
+  props<{ reply: SuggestionCommentReplyResponse }>()
+);
+
+export const createReplyFailure = createAction(
+  '[Suggestions] Create Reply Failure',
   props<{ error: any }>()
 );
 

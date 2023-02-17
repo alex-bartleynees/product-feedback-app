@@ -1,6 +1,11 @@
 import { Injectable } from '@angular/core';
 import { select, Store, Action, ActionsSubject } from '@ngrx/store';
-import { Suggestion } from '@product-feedback-app/api-interfaces';
+import {
+  Suggestion,
+  SuggestionComment,
+  SuggestionCommentReplyRequest,
+  SuggestionCommentRequest,
+} from '@product-feedback-app/api-interfaces';
 import { filter, Observable } from 'rxjs';
 
 import * as SuggestionsActions from './suggestions.actions';
@@ -9,7 +14,9 @@ import * as SuggestionsSelectors from './suggestions.selectors';
 @Injectable({ providedIn: 'root' })
 export class SuggestionsFacade {
   loaded$ = this.store.pipe(select(SuggestionsSelectors.getSuggestionsLoaded));
-  loadError$ = this.store.pipe(select(SuggestionsSelectors.getSuggestionsError));
+  loadError$ = this.store.pipe(
+    select(SuggestionsSelectors.getSuggestionsError)
+  );
   allSuggestions$ = this.store.pipe(
     select(SuggestionsSelectors.getAllSuggestions)
   );
@@ -70,6 +77,14 @@ export class SuggestionsFacade {
 
   createSuggestion(suggestion: Suggestion): void {
     this.dispatch(SuggestionsActions.createSuggestion({ suggestion }));
+  }
+
+  addCommentToSuggestion(comment: SuggestionCommentRequest): void {
+    this.dispatch(SuggestionsActions.addCommentToSuggestion({ comment }));
+  }
+
+  addReplyToComment(reply: SuggestionCommentReplyRequest) {
+    this.dispatch(SuggestionsActions.createCommentReply({ reply }));
   }
 
   deleteSuggestion(id: number): void {

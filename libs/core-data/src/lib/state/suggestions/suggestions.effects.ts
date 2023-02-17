@@ -1,10 +1,15 @@
 import { Injectable } from '@angular/core';
 import { createEffect, Actions, ofType } from '@ngrx/effects';
-import { Suggestion } from '@product-feedback-app/api-interfaces';
+import {
+  Suggestion,
+  SuggestionCommentReplyResponse,
+  SuggestionCommentResponse,
+} from '@product-feedback-app/api-interfaces';
 import { SuggestionService } from '../../services/suggestions/suggestion.service';
 import { catchError, map, mergeMap } from 'rxjs/operators';
 
 import * as SuggestionsActions from './suggestions.actions';
+
 @Injectable()
 export class SuggestionsEffects {
   constructor(
@@ -47,6 +52,32 @@ export class SuggestionsEffects {
       ),
       catchError(async (error) =>
         SuggestionsActions.createSuggestionFailure({ error })
+      )
+    )
+  );
+
+  addCommentToSuggestion$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(SuggestionsActions.addCommentToSuggestion),
+      mergeMap((action) => this.suggestionsService.addComment(action.comment)),
+      map((comment: SuggestionCommentResponse) => {
+        return SuggestionsActions.addCommentToSuggestionSuccess({ comment });
+      }),
+      catchError(async (error) =>
+        SuggestionsActions.AddCommentToSuggestionFailure({ error })
+      )
+    )
+  );
+
+  addReplyToComment$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(SuggestionsActions.createCommentReply),
+      mergeMap((action) => this.suggestionsService.addReply(action.reply)),
+      map((reply: SuggestionCommentReplyResponse) => {
+        return SuggestionsActions.createReplySuccess({ reply });
+      }),
+      catchError(async (error) =>
+        SuggestionsActions.createReplyFailure({ error })
       )
     )
   );

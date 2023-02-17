@@ -1,7 +1,15 @@
 import { Inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { APP_CONFIG } from '@app-config/config';
-import { AppConfig, Suggestion } from '@product-feedback-app/api-interfaces';
+import {
+  AppConfig,
+  Suggestion,
+  SuggestionComment,
+  SuggestionCommentReplyRequest,
+  SuggestionCommentReplyResponse,
+  SuggestionCommentRequest,
+  SuggestionCommentResponse,
+} from '@product-feedback-app/api-interfaces';
 import { catchError, Observable, throwError } from 'rxjs';
 
 @Injectable({
@@ -13,11 +21,12 @@ export class SuggestionService {
     private http: HttpClient
   ) {}
 
-  model = 'suggestions';
+  suggestionsModel = 'suggestions';
+  commentModel = 'comment';
 
   all(): Observable<Suggestion[]> {
     return this.http
-      .get<Suggestion[]>(this.getUrl())
+      .get<Suggestion[]>(this.getUrl(this.suggestionsModel))
       .pipe(catchError((error) => throwError(() => error)));
   }
 
@@ -32,7 +41,29 @@ export class SuggestionService {
 
   create(suggestion: Suggestion): Observable<Suggestion> {
     return this.http
-      .post<Suggestion>(this.getUrl(), suggestion)
+      .post<Suggestion>(this.getUrl(this.suggestionsModel), suggestion)
+      .pipe(catchError((error) => throwError(() => error)));
+  }
+
+  addComment(
+    comment: SuggestionCommentRequest
+  ): Observable<SuggestionCommentResponse> {
+    return this.http
+      .post<SuggestionCommentResponse>(
+        `${this.getUrl(this.commentModel)}`,
+        comment
+      )
+      .pipe(catchError((error) => throwError(() => error)));
+  }
+
+  addReply(
+    comment: SuggestionCommentRequest
+  ): Observable<SuggestionCommentReplyResponse> {
+    return this.http
+      .post<SuggestionCommentReplyResponse>(
+        `${this.getUrl(this.commentModel)}/reply`,
+        comment
+      )
       .pipe(catchError((error) => throwError(() => error)));
   }
 
@@ -42,11 +73,11 @@ export class SuggestionService {
       .pipe(catchError((error) => throwError(() => error)));
   }
 
-  private getUrl() {
-    return `${this.appConfig.apiEndpoint}${this.model}`;
+  private getUrl(model: string) {
+    return `${this.appConfig.apiEndpoint}${model}`;
   }
 
   private getUrlForId(id: number) {
-    return `${this.getUrl()}/${id}`;
+    return `${this.getUrl(this.suggestionsModel)}/${id}`;
   }
 }
