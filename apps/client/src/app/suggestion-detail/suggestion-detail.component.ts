@@ -2,7 +2,6 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import {
   Suggestion,
-  SuggestionComment,
   SuggestionCommentReplyRequest,
   SuggestionCommentRequest,
   SuggestionReply,
@@ -52,7 +51,7 @@ export class SuggestionDetailComponent implements OnInit {
     const comment: SuggestionCommentRequest = {
       suggestionId: this.selectedSuggestion.id,
       content: this.commentForm.comment.value,
-      userId: 7,
+      userId: 5,
     };
 
     this.suggestionsFacade.addCommentToSuggestion(comment);
@@ -69,7 +68,7 @@ export class SuggestionDetailComponent implements OnInit {
       suggestionCommentId: reply.suggestionCommentId,
       content: reply.content,
       replyingTo: reply.replyingTo,
-      userId: reply.user.id,
+      userId: 5,
     };
     console.log(suggestionReplyRequest);
     this.suggestionsFacade.addReplyToComment(suggestionReplyRequest);
@@ -77,23 +76,5 @@ export class SuggestionDetailComponent implements OnInit {
 
   onEditFeedbackClick(): void {
     this.router.navigate(['/suggestion', this.selectedSuggestion?.id]);
-  }
-
-  private updateSuggestionWithReply(
-    suggestion: Suggestion,
-    newComment: SuggestionComment | undefined
-  ): Suggestion {
-    if (!newComment) {
-      return suggestion;
-    }
-    return {
-      ...suggestion,
-      comments: suggestion.comments?.map((comment) => {
-        if (comment.user.username === newComment.user.username) {
-          return newComment;
-        }
-        return comment;
-      }),
-    };
   }
 }

@@ -3,13 +3,13 @@
     <product-feedback-app-heading-tile></product-feedback-app-heading-tile>
 
     <product-feedback-app-chiplist-tile
-      *ngIf="resize.resizeObs$ | async"
+      class="mobile-hide"
       [chipList]="chipList"
       (chipSelected)="onChipClick($event)"
     >
     </product-feedback-app-chiplist-tile>
 
-    <product-feedback-app-tile *ngIf="resize.resizeObs$ | async">
+    <product-feedback-app-tile class="mobile-hide">
       <div class="roadmap__container">
         <div class="roadmap__heading-container">
           <h3 class="roadmap__heading">Roadmap</h3>
@@ -39,11 +39,10 @@
     </product-feedback-app-tile>
   </div>
   <main class="content__container">
-    <product-feedback-app-header class="header">
-      <ng-container *ngIf="resize.resizeObs$ | async">
-        <img src="../../assets/icon-suggestions.svg" alt="suggestion icon" />
-        <h2>{{ (allSuggestions$ | async)?.length ?? 0 }} Suggestions</h2>
-      </ng-container>
+    <product-feedback-app-header class="header mobile-hide">
+      <img src="../../assets/icon-suggestions.svg" alt="suggestion icon" />
+      <h2>{{ (allSuggestions$ | async)?.length ?? 0 }} Suggestions</h2>
+
       <div class="header__sort" (click)="isMenuOpen = !isMenuOpen">
         <p class="body-2">Sort by: {{ menuItemSelected.title }}</p>
         <img

@@ -10,7 +10,6 @@ import { Suggestion } from '@product-feedback-app/api-interfaces';
 import { SuggestionsFacade } from '@product-feedback-app/core-data';
 import { Observable } from 'rxjs';
 import { MenuItem } from '../shared/menu/menu.component';
-import { ResizeService } from '../shared/resize-service/resize.service';
 
 export interface Chip {
   text: string;
@@ -105,8 +104,7 @@ export class SuggestionsComponent implements OnInit, OnDestroy {
   constructor(
     private suggestionsFacade: SuggestionsFacade,
     private router: Router,
-    private renderer: Renderer2,
-    public resize: ResizeService
+    private renderer: Renderer2
   ) {}
 
   ngOnInit(): void {

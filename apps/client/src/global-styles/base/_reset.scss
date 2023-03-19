@@ -92,3 +92,15 @@ select {
     scroll-behavior: auto !important;
   }
 }
+
+.mobile-hide {
+  @media (max-width: 700px) {
+    display: none;
+  }
+}
+
+.mobile-show {
+  @media (max-width: 700px) {
+    display: block !important;
+  }
+}
