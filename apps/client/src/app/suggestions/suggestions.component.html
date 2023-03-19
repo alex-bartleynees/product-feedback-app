@@ -39,9 +39,15 @@
     </product-feedback-app-tile>
   </div>
   <main class="content__container">
-    <product-feedback-app-header class="header mobile-hide">
-      <img src="../../assets/icon-suggestions.svg" alt="suggestion icon" />
-      <h2>{{ (allSuggestions$ | async)?.length ?? 0 }} Suggestions</h2>
+    <product-feedback-app-header class="header">
+      <img
+        class="header__img"
+        src="../../assets/icon-suggestions.svg"
+        alt="suggestion icon"
+      />
+      <h2 class="header__heading">
+        {{ (allSuggestions$ | async)?.length ?? 0 }} Suggestions
+      </h2>
 
       <div class="header__sort" (click)="isMenuOpen = !isMenuOpen">
         <p class="body-2">Sort by: {{ menuItemSelected.title }}</p>
@@ -56,7 +62,15 @@
           alt="down arrow"
         />
       </div>
+      <product-feedback-app-menu
+        class="menu"
+        *ngIf="isMenuOpen"
+        [menuItems]="menuItems"
+        [itemSelected]="menuItemSelected"
+        (menuItemClicked)="onMenuItemClick($event)"
+      ></product-feedback-app-menu>
     </product-feedback-app-header>
+
     <product-feedback-app-suggestions-list
       [sortBy]="sortBy"
       [allSuggestions$]="allSuggestions$"
@@ -65,10 +79,3 @@
     ></product-feedback-app-suggestions-list>
   </main>
 </div>
-
-<product-feedback-app-menu
-  *ngIf="isMenuOpen"
-  [menuItems]="menuItems"
-  [itemSelected]="menuItemSelected"
-  (menuItemClicked)="onMenuItemClick($event)"
-></product-feedback-app-menu>
