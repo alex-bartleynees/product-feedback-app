@@ -1,6 +1,5 @@
 <div class="navigation__buttons">
-  <product-feedback-app-back-button>
-  </product-feedback-app-back-button>
+  <product-feedback-app-back-button> </product-feedback-app-back-button>
   <product-feedback-app-button
     [style]="'secondary'"
     (click)="onEditFeedbackClick()"
@@ -28,6 +27,7 @@
         i !== (selectedSuggestion$ | async)!.comments!.length - 1
     }"
     [comment]="comment"
+    [currentUser]="currentUser"
     (newReply)="onNewReply($event)"
   ></product-feedback-app-suggestion-comment>
 </div>

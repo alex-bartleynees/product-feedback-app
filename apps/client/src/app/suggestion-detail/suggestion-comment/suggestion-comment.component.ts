@@ -3,9 +3,10 @@ import {
   Component,
   EventEmitter,
   Input,
+  OnInit,
   Output,
 } from '@angular/core';
-import { SuggestionComment } from '@product-feedback-app/api-interfaces';
+import { SuggestionComment, User } from '@product-feedback-app/api-interfaces';
 import { SuggestionReply } from '@product-feedback-app/api-interfaces';
 import { CommentForm } from '../../forms/comment-form';
 
@@ -19,14 +20,16 @@ export class SuggestionCommentComponent {
   @Input() comment?: SuggestionComment;
   @Input() parentComment?: SuggestionComment;
   @Input() replyingTo?: string;
+  @Input() currentUser?: User | null;
 
   @Output() newReply = new EventEmitter<SuggestionReply>();
 
   commentForm = new CommentForm();
   showReply = false;
 
+
   onCommentReply() {
-    if (!this.comment?.id || !this.commentForm.valid) {
+    if (!this.comment?.id || !this.commentForm.valid || !this.currentUser) {
       return;
     }
 
@@ -36,12 +39,7 @@ export class SuggestionCommentComponent {
         : this.comment.id,
       content: this.commentForm.comment.value,
       replyingTo: this.comment?.user.username,
-      user: {
-        id: 7,
-        image: '../../assets/user-images/image-zena.jpg',
-        name: 'Jane Doe',
-        username: 'janedoe',
-      },
+      user: this.currentUser,
     };
 
     this.newReply.emit(newReply);

@@ -5,8 +5,13 @@ import {
   SuggestionCommentReplyRequest,
   SuggestionCommentRequest,
   SuggestionReply,
+  User,
 } from '@product-feedback-app/api-interfaces';
-import { SuggestionsFacade } from '@product-feedback-app/core-data';
+import {
+  SuggestionsFacade,
+  UsersFacade,
+} from '@product-feedback-app/core-data';
+import { filter } from 'rxjs';
 import { CommentForm } from '../forms/comment-form';
 
 @Component({
@@ -19,10 +24,13 @@ export class SuggestionDetailComponent implements OnInit {
   selectedSuggestion$ = this.suggestionsFacade.selectedSuggestions$;
   selectedSuggestion?: Suggestion;
   commentForm = new CommentForm();
+  currentUser!: User;
+
   constructor(
     private suggestionsFacade: SuggestionsFacade,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private usersFacade: UsersFacade
   ) {}
 
   ngOnInit(): void {
@@ -33,6 +41,10 @@ export class SuggestionDetailComponent implements OnInit {
 
     this.selectedSuggestion$.subscribe((suggestion) => {
       this.selectedSuggestion = suggestion;
+    });
+
+    this.usersFacade.currentUser$.pipe(filter(Boolean)).subscribe((user) => {
+      this.currentUser = user;
     });
   }
 
@@ -45,13 +57,17 @@ export class SuggestionDetailComponent implements OnInit {
   }
 
   onSubmitComment(): void {
-    if (!this.selectedSuggestion || !this.commentForm.valid) {
+    if (
+      !this.selectedSuggestion ||
+      !this.commentForm.valid ||
+      !this.currentUser.id
+    ) {
       return;
     }
     const comment: SuggestionCommentRequest = {
       suggestionId: this.selectedSuggestion.id,
       content: this.commentForm.comment.value,
-      userId: 5,
+      userId: this.currentUser.id,
     };
 
     this.suggestionsFacade.addCommentToSuggestion(comment);
@@ -59,7 +75,11 @@ export class SuggestionDetailComponent implements OnInit {
   }
 
   onNewReply(reply: SuggestionReply): void {
-    if (!this.selectedSuggestion?.id || !reply.user.id) {
+    if (
+      !this.selectedSuggestion?.id ||
+      !reply.user.id ||
+      !this.currentUser.id
+    ) {
       return;
     }
 
@@ -68,9 +88,9 @@ export class SuggestionDetailComponent implements OnInit {
       suggestionCommentId: reply.suggestionCommentId,
       content: reply.content,
       replyingTo: reply.replyingTo,
-      userId: 5,
+      userId: this.currentUser.id,
     };
-    console.log(suggestionReplyRequest);
+
     this.suggestionsFacade.addReplyToComment(suggestionReplyRequest);
   }
 

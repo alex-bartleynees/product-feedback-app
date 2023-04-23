@@ -6,9 +6,12 @@ import {
   OnInit,
 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Suggestion } from '@product-feedback-app/api-interfaces';
-import { SuggestionsFacade } from '@product-feedback-app/core-data';
-import { Subject, takeUntil } from 'rxjs';
+import { Suggestion, User } from '@product-feedback-app/api-interfaces';
+import {
+  SuggestionsFacade,
+  UsersFacade,
+} from '@product-feedback-app/core-data';
+import { filter, Subject, takeUntil } from 'rxjs';
 import { SuggestionForm } from '../forms/suggestion-form';
 import { MenuItem } from '../shared/menu/menu.component';
 
@@ -25,6 +28,7 @@ export class SuggestionEditComponent implements OnInit, OnDestroy {
   selectedSuggestion$ = this.suggestionService.selectedSuggestions$;
   selectedSuggestion?: Suggestion;
   editTitle?: string;
+  currentUser!: User;
 
   menuItems: MenuItem[] = [
     {
@@ -74,7 +78,8 @@ export class SuggestionEditComponent implements OnInit, OnDestroy {
     private router: Router,
     private route: ActivatedRoute,
     private suggestionService: SuggestionsFacade,
-    private changeDetectorRef: ChangeDetectorRef
+    private changeDetectorRef: ChangeDetectorRef,
+    private usersFacade: UsersFacade
   ) {}
 
   ngOnInit(): void {
@@ -95,6 +100,10 @@ export class SuggestionEditComponent implements OnInit, OnDestroy {
           this.changeDetectorRef.markForCheck();
         });
     }
+
+    this.usersFacade.currentUser$
+      .pipe(filter(Boolean))
+      .subscribe((user) => (this.currentUser = user));
   }
 
   ngOnDestroy(): void {

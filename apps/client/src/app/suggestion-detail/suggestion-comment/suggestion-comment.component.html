@@ -47,6 +47,7 @@
           [comment]="reply"
           [parentComment]="comment"
           [replyingTo]="reply.replyingTo"
+          [currentUser]="currentUser"
           (newReply)="onNewReply($event)"
         ></product-feedback-app-suggestion-comment>
       </div>
