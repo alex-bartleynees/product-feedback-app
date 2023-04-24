@@ -5,8 +5,17 @@
   </div>
   <button
     class="mobile__sidebar-btn mobile-show"
-    (click)="mobileSideBarClick.emit()"
+    (click)="onMobileSideBarClick()"
   >
-    <img src="../../assets/icon-hamburger.svg" alt="menu icon" />
+    <img
+      *ngIf="!showMobileSidebar"
+      src="../../assets/icon-hamburger.svg"
+      alt="menu icon"
+    />
+    <img
+      *ngIf="showMobileSidebar"
+      src="../../assets/icon-close.svg"
+      alt="menu icon"
+    />
   </button>
 </product-feedback-app-tile>
