@@ -1,13 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { SuggestionsComponent } from './suggestions/suggestions.component';
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () =>
-      import('./suggestions/suggestions.module').then(
-        (m) => m.SuggestionsModule
-      ),
+    component: SuggestionsComponent,
   },
   {
     path: 'suggestion-detail/:id',

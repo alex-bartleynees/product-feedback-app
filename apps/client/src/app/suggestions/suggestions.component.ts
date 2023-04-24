@@ -29,19 +29,8 @@ export interface SortBy {
 })
 export class SuggestionsComponent implements OnInit, OnDestroy {
   allSuggestions$ = this.suggestionsFacade.allSuggestions$;
-  plannedSuggestions$ = this.suggestionsFacade.filterSuggestions$(
-    'status',
-    'planned'
-  );
-  inProgressSuggestions$ = this.suggestionsFacade.filterSuggestions$(
-    'status',
-    'in-progress'
-  );
-  liveSuggestions$ = this.suggestionsFacade.filterSuggestions$(
-    'status',
-    'live'
-  );
   isMenuOpen = false;
+  showMobileSidebar = false;
   sortBy: SortBy = { key: 'upvotes', order: 'desc' };
   chipList: Chip[] = [
     {
@@ -154,6 +143,11 @@ export class SuggestionsComponent implements OnInit, OnDestroy {
     }
     this.suggestionsFacade.selectSuggestion(suggestion.id);
     this.router.navigate(['/suggestion-detail', suggestion.id]);
+  }
+
+  openMobileSideBar() {
+    console.log('click');
+    this.showMobileSidebar = !this.showMobileSidebar;
   }
 
   ngOnDestroy(): void {

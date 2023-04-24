@@ -3,7 +3,10 @@
     <h2>Frontend Mentor</h2>
     <p class="body-2">Feedback Board</p>
   </div>
-  <button class="mobile__sidebar-btn mobile-show">
+  <button
+    class="mobile__sidebar-btn mobile-show"
+    (click)="mobileSideBarClick.emit()"
+  >
     <img src="../../assets/icon-hamburger.svg" alt="menu icon" />
   </button>
 </product-feedback-app-tile>

@@ -1,1 +1,9 @@
-<p>mobile-sidebar works!</p>
+<div class="container" [@slideInOut]>
+  <product-feedback-app-chiplist-tile
+    [chipList]="chipList"
+    (chipSelected)="chipSelected.emit($event)"
+  >
+  </product-feedback-app-chiplist-tile>
+
+  <product-feedback-app-roadmap-tile></product-feedback-app-roadmap-tile>
+</div>

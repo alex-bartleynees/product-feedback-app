@@ -1,6 +1,8 @@
 <div class="page__container">
   <div class="sidebar__container">
-    <product-feedback-app-heading-tile></product-feedback-app-heading-tile>
+    <product-feedback-app-heading-tile
+      (mobileSideBarClick)="openMobileSideBar()"
+    ></product-feedback-app-heading-tile>
 
     <product-feedback-app-chiplist-tile
       class="mobile-hide"
@@ -9,34 +11,9 @@
     >
     </product-feedback-app-chiplist-tile>
 
-    <product-feedback-app-tile class="mobile-hide">
-      <div class="roadmap__container">
-        <div class="roadmap__heading-container">
-          <h3 class="roadmap__heading">Roadmap</h3>
-          <a routerLink="road-map" class="roadmap__view-text body-3">View</a>
-        </div>
-        <div class="roadmap__content">
-          <div class="roadmap__item">
-            <p>Planned</p>
-            <span class="number">{{
-              (plannedSuggestions$ | async)?.length
-            }}</span>
-          </div>
-
-          <div class="roadmap__item roadmap__item--in-progress">
-            <p>In-Progress</p>
-            <span class="number">{{
-              (inProgressSuggestions$ | async)?.length
-            }}</span>
-          </div>
-
-          <div class="roadmap__item roadmap__item--live">
-            <p>Live</p>
-            <span class="number">{{ (liveSuggestions$ | async)?.length }}</span>
-          </div>
-        </div>
-      </div>
-    </product-feedback-app-tile>
+    <product-feedback-app-roadmap-tile
+      class="mobile-hide"
+    ></product-feedback-app-roadmap-tile>
   </div>
   <main class="content__container">
     <product-feedback-app-header class="header">
@@ -79,3 +56,10 @@
     ></product-feedback-app-suggestions-list>
   </main>
 </div>
+
+<product-feedback-app-mobile-sidebar
+  *ngIf="showMobileSidebar"
+  class="mobile-sidebar"
+  [chipList]="chipList"
+  (chipSelected)="onChipClick($event)"
+></product-feedback-app-mobile-sidebar>

@@ -4,3 +4,8 @@
   gap: 0.5rem;
   height: 140px;
 }
+
+.chip {
+  flex-grow: 1;
+  max-width: 7rem;
+}

@@ -1,6 +1,7 @@
 <product-feedback-app-tile>
   <div class="chip__container">
     <product-feedback-app-chip
+      class="chip"
       *ngFor="let chip of chipList"
       [text]="chip.text"
       [active]="chip.active"
