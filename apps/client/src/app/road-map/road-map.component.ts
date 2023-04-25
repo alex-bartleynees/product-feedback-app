@@ -10,7 +10,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { SuggestionsFacade } from '@product-feedback-app/core-data';
-import { combineLatest, fromEvent, map } from 'rxjs';
+import { combineLatest, map } from 'rxjs';
 
 @Component({
   selector: 'product-feedback-app-road-map',
