@@ -13,8 +13,13 @@ product-feedback-app-back-button {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     margin-block-start: 3rem;
-    gap: 1rem;
+    gap: 2rem;
     padding: 1rem;
+    overflow: auto;
+
+    @media (max-width: 900px) {
+        gap: 1rem;
+    }
 
     @media (max-width: 700px) {
         display: block;
@@ -81,4 +86,13 @@ product-feedback-app-back-button {
 
 .live-cards {
     --status-color: #62BCFA;
+}
+
+.section {
+    min-inline-size: 20rem;
+
+    
+    @media (max-width: 900px) {
+        min-inline-size: 14rem;
+    }
 }

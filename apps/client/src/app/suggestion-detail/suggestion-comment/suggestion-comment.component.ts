@@ -3,7 +3,6 @@ import {
   Component,
   EventEmitter,
   Input,
-  OnInit,
   Output,
 } from '@angular/core';
 import { SuggestionComment, User } from '@product-feedback-app/api-interfaces';
@@ -26,7 +25,6 @@ export class SuggestionCommentComponent {
 
   commentForm = new CommentForm();
   showReply = false;
-
 
   onCommentReply() {
     if (!this.comment?.id || !this.commentForm.valid || !this.currentUser) {

@@ -10,6 +10,7 @@
     position: relative;
     border-top: 6px solid var(--status-color, #F49F85);
     border-radius: 6px;
+    max-height: 15rem;
 }
 
 .category-chip {
@@ -29,7 +30,10 @@
 }
 
 .card__content {
-    color: #647196
+    color: #647196;
+    overflow: hidden;
+    max-width: 100%;
+    text-overflow: ellipsis;
 }
 
 .card__status {

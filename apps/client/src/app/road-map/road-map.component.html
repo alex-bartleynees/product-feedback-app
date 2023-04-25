@@ -50,7 +50,10 @@
   </div>
 
   <section class="grid__container">
-    <div *ngIf="(isMobile && selectedTabName === 'planned') || !isMobile">
+    <div
+      class="section"
+      *ngIf="(isMobile && selectedTabName === 'planned') || !isMobile"
+    >
       <h3 class="roadmap__heading mobile-hide">
         Planned ({{ suggestions.planned.length }})
       </h3>
@@ -62,7 +65,10 @@
         [suggestion]="suggestion"
       ></product-feedback-app-road-map-card>
     </div>
-    <div *ngIf="(isMobile && selectedTabName === 'inprogress') || !isMobile">
+    <div
+      class="section"
+      *ngIf="(isMobile && selectedTabName === 'inprogress') || !isMobile"
+    >
       <h3 class="roadmap__heading mobile-hide">
         In-Progress ({{ suggestions.inProgress.length }})
       </h3>
@@ -71,11 +77,14 @@
       </p>
       <product-feedback-app-road-map-card
         class="inprogress-cards"
-        *ngFor="let suggestion of suggestions.live"
+        *ngFor="let suggestion of suggestions.inProgress"
         [suggestion]="suggestion"
       ></product-feedback-app-road-map-card>
     </div>
-    <div *ngIf="(isMobile && selectedTabName === 'live') || !isMobile">
+    <div
+      class="section"
+      *ngIf="(isMobile && selectedTabName === 'live') || !isMobile"
+    >
       <h3 class="roadmap__heading mobile-hide">
         Live ({{ suggestions.live.length }})
       </h3>

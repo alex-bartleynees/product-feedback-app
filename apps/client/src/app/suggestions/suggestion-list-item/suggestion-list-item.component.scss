@@ -4,6 +4,7 @@
   padding: 2rem;
   background-color: var(--background-color);
   border-radius: 10px;
+  overflow: hidden;
 
   @media (max-width: 700px) {
     margin-inline: var(--margin-inline-mobile);
@@ -34,6 +35,9 @@
 
 .suggestion-item__text {
   color: #647196;
+  max-width: 50rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .comment__icon {

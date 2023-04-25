@@ -50,7 +50,11 @@ export class RoadMapComponent implements OnInit, AfterViewInit, OnDestroy {
   constructor(
     private suggestionsFacade: SuggestionsFacade,
     private renderer: Renderer2
-  ) {}
+  ) {
+    this.allSuggestions$.subscribe((suggestions) => {
+      console.log(suggestions);
+    });
+  }
 
   @HostListener('window:resize', ['$event'])
   onResize() {
