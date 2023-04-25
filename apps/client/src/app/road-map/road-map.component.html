@@ -6,32 +6,86 @@
   </div>
 </product-feedback-app-header>
 
-<div class="grid__container">
-  <div *ngIf="plannedSuggestions$ | async as planned">
-    <h3 class="roadmap__heading">Planned ({{ planned.length }})</h3>
-    <p class="body-2 roadmap__subtitle">Ideas prioritized for research</p>
-    <product-feedback-app-road-map-card
-      *ngFor="let suggestion of planned"
-      [suggestion]="suggestion"
-    ></product-feedback-app-road-map-card>
-  </div>
-  <div *ngIf="inProgressSuggestions$ | async as inProgress">
-    <h3 class="roadmap__heading">In-Progress ({{ inProgress.length }})</h3>
-    <p class="body-2 roadmap__subtitle">Currently being developed</p>
-    <product-feedback-app-road-map-card
-      class="inprogress-cards"
-      *ngFor="let suggestion of inProgress"
-      [suggestion]="suggestion"
-    ></product-feedback-app-road-map-card>
-  </div>
-  <div *ngIf="liveSuggestions$ | async as live">
-    <h3 class="roadmap__heading">Live ({{ live.length }})</h3>
+<ng-container *ngIf="allSuggestions$ | async as suggestions">
+  <article class="mobile-sub-header">
+    <div
+      #plannedTab
+      class="tab tab__selected tab__selected--planned"
+      (click)="tabSelected('planned', plannedTab)"
+    >
+      <h3 class="mobile-show">Planned ({{ suggestions.planned.length }})</h3>
+    </div>
+    <div
+      #inProgressTab
+      class="tab"
+      (click)="tabSelected('inprogress', inProgressTab)"
+    >
+      <h3 class="mobile-show">
+        In-Progress ({{ suggestions.inProgress.length }})
+      </h3>
+    </div>
+    <div #liveTab class="tab" (click)="tabSelected('live', liveTab)">
+      <h3 class="mobile-show">Live ({{ suggestions.live.length }})</h3>
+    </div>
+  </article>
 
-    <p class="body-2 roadmap__subtitle">Released features</p>
-    <product-feedback-app-road-map-card
-      class="live-cards"
-      *ngFor="let suggestion of live"
-      [suggestion]="suggestion"
-    ></product-feedback-app-road-map-card>
+  <div class="mobile__heading mobile-show">
+    <ng-container *ngIf="selectedTabName === 'planned'">
+      <h3 class="roadmap__heading">
+        Planned ({{ suggestions.planned.length }})
+      </h3>
+      <p class="body-2 roadmap__subtitle">Ideas prioritized for research</p>
+    </ng-container>
+    <ng-container *ngIf="selectedTabName === 'inprogress'">
+      <h3 class="roadmap__heading">
+        In-Progress ({{ suggestions.inProgress.length }})
+      </h3>
+      <p class="body-2 roadmap__subtitle">Currently being developed</p>
+    </ng-container>
+    <ng-container *ngIf="selectedTabName === 'live'">
+      <h3 class="roadmap__heading">Live ({{ suggestions.live.length }})</h3>
+
+      <p class="body-2 roadmap__subtitle">Released features</p>
+    </ng-container>
   </div>
-</div>
+
+  <section class="grid__container">
+    <div *ngIf="(isMobile && selectedTabName === 'planned') || !isMobile">
+      <h3 class="roadmap__heading mobile-hide">
+        Planned ({{ suggestions.planned.length }})
+      </h3>
+      <p class="body-2 roadmap__subtitle mobile-hide">
+        Ideas prioritized for research
+      </p>
+      <product-feedback-app-road-map-card
+        *ngFor="let suggestion of suggestions.planned"
+        [suggestion]="suggestion"
+      ></product-feedback-app-road-map-card>
+    </div>
+    <div *ngIf="(isMobile && selectedTabName === 'inprogress') || !isMobile">
+      <h3 class="roadmap__heading mobile-hide">
+        In-Progress ({{ suggestions.inProgress.length }})
+      </h3>
+      <p class="body-2 roadmap__subtitle mobile-hide">
+        Currently being developed
+      </p>
+      <product-feedback-app-road-map-card
+        class="inprogress-cards"
+        *ngFor="let suggestion of suggestions.live"
+        [suggestion]="suggestion"
+      ></product-feedback-app-road-map-card>
+    </div>
+    <div *ngIf="(isMobile && selectedTabName === 'live') || !isMobile">
+      <h3 class="roadmap__heading mobile-hide">
+        Live ({{ suggestions.live.length }})
+      </h3>
+
+      <p class="body-2 roadmap__subtitle mobile-hide">Released features</p>
+      <product-feedback-app-road-map-card
+        class="live-cards"
+        *ngFor="let suggestion of suggestions.live"
+        [suggestion]="suggestion"
+      ></product-feedback-app-road-map-card>
+    </div>
+  </section>
+</ng-container>
