@@ -45,6 +45,7 @@ product-feedback-app-back-button {
 
 .tab {
     color: #647196;
+    cursor: pointer;
     height: 100%;
     display: flex;
     align-items: center;
@@ -92,7 +93,7 @@ product-feedback-app-back-button {
     min-inline-size: 20rem;
 
     
-    @media (max-width: 900px) {
+    @media (max-width: 1000px) {
         min-inline-size: 14rem;
     }
 }
